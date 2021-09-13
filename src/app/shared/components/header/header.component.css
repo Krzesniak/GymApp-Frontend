@@ -1,0 +1,12 @@
+.mat-toolbar.mat-primary {
+  background-color: #081739;
+}
+ul li {
+  list-style: none;
+}
+img {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: 50%;
+}

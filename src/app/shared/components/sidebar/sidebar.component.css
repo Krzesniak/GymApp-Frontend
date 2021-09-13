@@ -1,0 +1,60 @@
+.mat-drawer.mat-drawer-side {
+  background-color: #070d1d;
+}
+.mat-list-item:hover .mat-icon{
+  color: #c42e38;
+}
+.mat-list-item:focus .mat-icon{
+  color: #c42e38;
+}
+
+.mat-icon {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.mat-icon:hover, .mat-icon:focus{
+  color: #c42e38;
+}
+
+.mat-list-item:hover, .mat-list-item:focus{
+  border-radius: 25px;
+}
+img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.mat-expansion-panel {
+  background-color: #070d1d;
+}
+.mat-expansion-panel-body {
+  padding: 4px !important;
+}
+.mat-list-item-content{
+  font-size: 14px !important;
+}
+
+.similar-button{
+  border-radius: 40%;
+  display: inline-block;
+  padding: 5px;
+  height: 50%;
+  text-align: center;
+}
+.mat-h5, .mat-typography h5{
+margin: 0;
+  padding: 0;
+}
+.green{
+  background-color: green;
+}
+.orange{
+  background-color: orange;
+}
+.red{
+  background-color: red;
+}
+.extreme{
+  background-color: black;
+}

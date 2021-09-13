@@ -1,0 +1,55 @@
+<mat-nav-list>
+
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/">
+    <mat-icon>home</mat-icon>
+    Dashboard
+  </a>
+
+  <mat-expansion-panel expanded="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Trening
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/posts">
+      <mat-icon>fitness_center</mat-icon>
+      Plan treningowy
+    </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/articles">
+      <mat-icon>equalizer</mat-icon>
+      Statystyki
+    </a>
+    <a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/articles">
+        <mat-icon>emoji_events</mat-icon>
+        Rekordy
+      </a>
+    </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/exercises">
+      <mat-icon>menu_book</mat-icon>
+      Baza ćwiczeń
+    </a>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel expanded="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Dieta
+      </mat-panel-title>
+      <mat-panel-description>
+
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/posts">
+      <mat-icon>restaurant</mat-icon>Plan jedzeniowy
+    </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/articles">
+      <mat-icon>equalizer</mat-icon> Statystyki
+    </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/articles">
+      <mat-icon>menu_book</mat-icon>  Baza przepisów
+    </a>
+  </mat-expansion-panel>
+
+
+</mat-nav-list>

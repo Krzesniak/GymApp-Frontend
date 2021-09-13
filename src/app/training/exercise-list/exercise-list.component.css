@@ -1,0 +1,54 @@
+mat-toolbar {
+  justify-content: space-between;
+  margin: 0 15px 0 15px;
+  background-color: #1a2237;
+  width: auto;
+}
+
+.content {
+  padding: 16px;
+}
+.mat-icon:hover{
+  cursor: pointer;
+}
+
+.content > mat-card {
+  margin-bottom: 16px;
+}
+.mat-icon{
+  float: right;
+  margin: 0;
+}
+.mat-card-header{
+  flex-direction: row-reverse;
+}
+.mat-card-image{
+  width: calc(110%);
+  padding: 15px;
+  margin-top: 0px;
+  margin-bottom: 0;
+  border-radius: 10%;
+  height: 90%;
+  box-sizing: border-box;
+}
+.mat-card-content{
+  display: flex;
+  min-height: 100px;
+  align-content: flex-start;
+  align-items: flex-end;
+}
+.mat-card{
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  background-color: #1a2237;
+  box-sizing: border-box;
+}
+h1{
+  margin-left: 15px;
+}
+h3{
+  margin-bottom: 4px;
+}
+
+
