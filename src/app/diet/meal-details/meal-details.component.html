@@ -1,3 +1,5 @@
+<div>
+</div>
 <div class="border" >
   <div class="closing-header">
     <div>
@@ -30,26 +32,26 @@
       </div>
       <div class="flex-2">
         <mat-icon>local_fire_department</mat-icon>
-        Kalorie: 250 kcal
+        Kalorie:  {{ mealDetails.mealNutrient.calories}} kcal
       </div>
       <div style="display: flex">
         <div class="flex-2">
           <mat-icon>egg</mat-icon>
-          Bialko: 23g
+          Bialko:  {{ mealDetails.mealNutrient.protein}} g
         </div>
         <div class="flex-2">
           <mat-icon>breakfast_dining</mat-icon>
-          Węglowodany: 10g
+          Węglowodany:  {{ mealDetails.mealNutrient.carbohydrate}} g
         </div>
       </div>
       <div style="display: flex">
         <div class="flex-2">
           <mat-icon>water_drop</mat-icon>
-          Tłuszcze: 25gs
+          Tłuszcze:  {{ mealDetails.mealNutrient.fat}} g
         </div>
         <div class="flex-2">
           <mat-icon>grain</mat-icon>
-          Błonnik: 12g
+          Błonnik: {{ mealDetails.mealNutrient.fiber}} g
         </div>
       </div>
 

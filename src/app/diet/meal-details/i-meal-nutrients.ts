@@ -2,6 +2,6 @@ export interface IMealNutrients {
   calories: number,
   fat: number,
   protein: number,
-  carbohydrates: number,
+  carbohydrate: number,
   fiber: number
 }
