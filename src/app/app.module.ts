@@ -6,6 +6,9 @@ import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-b
 import {DefaultModule} from "./layouts/default/default.module";
 import {AppRoutingModule} from "./app-routing.module";
 import {TrainingModule} from "./training/training.module";
+import { DietListComponent } from './diet/meal/diet-list.component';
+import {MealModule} from "./diet/meal.module";
+import { MealDetailsComponent } from './diet/meal-details/meal-details.component';
 
 
 @NgModule({
@@ -18,7 +21,8 @@ import {TrainingModule} from "./training/training.module";
     NoopAnimationsModule,
     BrowserAnimationsModule,
     DefaultModule,
-    TrainingModule
+    TrainingModule,
+    MealModule
   ],
   providers: [],
   bootstrap: [AppComponent]

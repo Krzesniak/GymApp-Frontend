@@ -1,0 +1,96 @@
+<div class="border" >
+  <div class="closing-header">
+    <div>
+      <mat-icon (click)="goBack()">arrow_back_ios</mat-icon>
+    </div>
+    <div>
+      <mat-icon (click)="goBack()">close</mat-icon>
+    </div>
+  </div>
+
+  <div class="main-header">
+    <div class="product-header">
+      <ul class="ul-header">
+        <li>
+          <mat-icon>ramen_dining</mat-icon>
+          {{mealDetails.mealDifficulty}}
+        </li>
+        <li>
+          <mat-icon>schedule</mat-icon>
+          <!--#TODO MEAL_TIME-->
+          20 min
+        </li>
+      </ul>
+
+      <div class="title">
+        <h2>{{mealDetails.name}}</h2>
+      </div>
+      <div class="similar-button red">
+        <h5> {{mealDetails.type}} </h5>
+      </div>
+      <div class="flex-2">
+        <mat-icon>local_fire_department</mat-icon>
+        Kalorie: 250 kcal
+      </div>
+      <div style="display: flex">
+        <div class="flex-2">
+          <mat-icon>egg</mat-icon>
+          Bialko: 23g
+        </div>
+        <div class="flex-2">
+          <mat-icon>breakfast_dining</mat-icon>
+          Węglowodany: 10g
+        </div>
+      </div>
+      <div style="display: flex">
+        <div class="flex-2">
+          <mat-icon>water_drop</mat-icon>
+          Tłuszcze: 25gs
+        </div>
+        <div class="flex-2">
+          <mat-icon>grain</mat-icon>
+          Błonnik: 12g
+        </div>
+      </div>
+
+    </div>
+    <div class="product-img">
+      <img src='assets/img/food/{{mealDetails.urlImage}}.jpg'>
+    </div>
+
+
+  </div>
+
+  <!--  <p>{{data.mealID}}</p>-->
+  <div class="details">
+    <div style="padding-top: 10px">
+      <h2>Składniki</h2>
+
+      <ul style="margin: 0; padding: 5px">
+        <li class="ingredient-li" style="display: flex" *ngFor="let ingredient of mealDetails.ingredients | keyvalue">
+          <div style="flex: 1;">
+            {{ingredient.value.amount}}
+          </div>
+          <div style="flex: 9">
+            {{ingredient.key}}
+          </div>
+          <div style="flex: 1;">
+            {{ingredient.value.overall}}
+          </div>
+        </li>
+      </ul>
+
+    </div>
+    <div style="padding-top: 20px">
+      <h2>Sposób przygotowania</h2>
+      <ul class="recipe-steps">
+        <li *ngFor="let recipeSteps of mealDetails.recipeSteps">
+         <div class="row-number">
+           {{recipeSteps.rowNumber}}.
+         </div>  {{recipeSteps.description}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+

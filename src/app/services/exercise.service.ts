@@ -10,8 +10,12 @@ export class ExerciseService {
 
   constructor(private http:HttpClient) {}
 
-  getExercisesHeader(){
-    return this.http.get<Observable <IExerciseHeader>>("http://localhost:8080/exercises");
+  getExercisesHeader(pageNumber: number){
+    return this.http.get<Observable <IExerciseHeader>>("http://localhost:8080/exercises", {
+      params: {
+        page: pageNumber
+      }
+    });
   }
 
 
