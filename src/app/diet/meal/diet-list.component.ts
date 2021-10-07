@@ -85,7 +85,7 @@ export class DietListComponent implements OnInit, AfterViewInit {
 
   openDialog(meal: MealHeader) {
     this.interactionService.sendMessage("false");
-    this.router.navigate(['meals', meal.id]);
+    this.router.navigate(['app/meals', meal.id]);
 //     this.dialog.open(MealDetailsComponent, {data: {mealID: meal.id}});
   }
 }

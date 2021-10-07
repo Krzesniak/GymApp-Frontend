@@ -1,30 +1,40 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {DefaultComponent} from './layouts/default/default.component';
-import {DashboardComponent} from './modules/dashboard/dashboard.component';
-import {ExerciseListComponent} from "./training/exercise-list/exercise-list.component";
-import {DietListComponent} from "./diet/meal/diet-list.component";
-import {MealDetailsComponent} from "./diet/meal-details/meal-details.component";
+import {ApplicationComponent} from './layouts/default/application.component';
+import {HomeLayoutComponent} from "./layouts/home-layout/home-layout.component";
 
-const routes: Routes = [{
-  path: '',
-  component: DefaultComponent,
-  children: [{
+const routes: Routes = [
+  {
     path: '',
-    component: DashboardComponent
-  }, {
-    path: 'exercises',
-    component: ExerciseListComponent
+    component: HomeLayoutComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full'
+      },
+      {
+        path: 'home',
+        loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
+      }
+    ]
+},
+  {
+    path: '',
+    component: ApplicationComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'app',
+        pathMatch: 'full'
+      },
+      {
+        path: 'app',
+        loadChildren: () => import('./main-application/main-application.module').then(m => m.MainApplicationModule)
+      }
+    ]
   },
-    {
-      path: 'meals',
-      component: DietListComponent
-    },
-    {
-      path: 'meals/:id',
-      component: MealDetailsComponent
-    }]
-}];
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {DefaultComponent} from "./default.component";
+import {ApplicationComponent} from "./application.component";
 import {DashboardComponent} from "../../modules/dashboard/dashboard.component";
 import {RouterModule} from "@angular/router";
 import {SharedModule} from "../../shared/shared.module";
@@ -14,7 +14,7 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
-    DefaultComponent,
+    ApplicationComponent,
     DashboardComponent
   ],
   imports: [
@@ -29,4 +29,4 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     MatTableModule
   ]
 })
-export class DefaultModule { }
+export class ApplicationModule { }

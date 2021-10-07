@@ -3,10 +3,10 @@ import {InteractionService} from "../../services/interaction.service";
 
 @Component({
   selector: 'app-default',
-  templateUrl: './default.component.html',
-  styleUrls: ['./default.component.css']
+  templateUrl: './application.component.html',
+  styleUrls: ['./application.component.css']
 })
-export class DefaultComponent implements OnInit {
+export class ApplicationComponent implements OnInit {
 
   sideBarOpen = true;
   headerOpen: boolean = true;
