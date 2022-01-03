@@ -1,0 +1,59 @@
+.measurement-list-mat-toolbar.mat-toolbar {
+  justify-content: space-between;
+  margin: 0 15px 0 15px;
+  background-color: #74a9ff;
+  width: auto;
+}
+.measurement-list-mat-toolbar .sticky-button{
+  background-color: #eea520 !important;
+  display: flex;
+  align-items: center;
+  color: white;
+  justify-content: center;
+}
+.measurement-header{
+  background-color: #eea520;
+  padding: 15px;
+  font-size: 1.2rem;
+}
+.actual-measurement{
+  display: flex;
+  flex-direction: column;
+  background-color: #74a9ff;
+  width: 25%;
+  height: auto;
+  border-radius: 20px;
+  padding: 20px;
+
+}
+.measurement-wrapper{
+  background-color: #081739;
+  margin: 16px;
+}
+.measurement-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.measurement-card-first{
+  display: flex;
+}
+.measurement-card-rest{
+  display: flex;
+  background-color: #1a2237;
+}
+
+.measurement-text{
+  flex: 2;
+}
+.measurement-value{
+  flex: 1;
+}
+.mat-measure-own-card{
+  padding: 20px !important;
+  background-color: #1a2237;
+}
+.content {
+  padding: 16px;
+}

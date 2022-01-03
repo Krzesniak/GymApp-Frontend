@@ -1,1 +1,22 @@
-<p>dashboard works!</p>
+<mat-toolbar class="dashboard-title">
+  Dashboard
+</mat-toolbar>
+
+<div class="current-dashboard-date">
+  {{currentDate | date}}
+</div>
+<div class="dashboard-header">
+ <mat-icon>fitness_center</mat-icon> Najbliższy zaplanowany trening: {{summary.incomingTrainingDate}}
+</div>
+<div class="dashboard-header">
+ <mat-icon>restaurant</mat-icon> Najbliższa zaplanowana dieta:  {{summary.incomingDietDate}}
+</div>
+<div class="dashboard-header">
+  <mat-icon>fitness_center</mat-icon> Ostatnio wykonany trening:  {{summary.lastTrainingDate}}
+</div>
+<div class="dashboard-header">
+  <mat-icon>restaurant</mat-icon> Ostatnio zrealizowana dieta: {{summary.lastDietDate}}
+</div>
+<div class="dashboard-header">
+  <mat-icon>analytics</mat-icon> Ostatnio wykonany pomiar: {{summary.lastMeasurement}}
+</div>

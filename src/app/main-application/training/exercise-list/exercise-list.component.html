@@ -1,0 +1,110 @@
+<div *ngIf="infoMessage.length > 1" class="exercise-accept">
+  {{infoMessage}}
+</div>
+<mat-toolbar class="exercise-list-mat-toolbar">Baza ćwiczeń
+  <button mat-fab class="sticky-button" type="button" (click)="addExercise()">
+    <mat-icon class="special">add</mat-icon>
+  </button>
+</mat-toolbar>
+<div class="filter-header">
+
+  <form [formGroup]="form"  class="form-exercise-list">
+    <div class="edit-field">
+      <div class="edit-label">
+        Opis
+      </div>
+      <mat-form-field class="input-full-width">
+        <input class="exercise-input" matInput type="text" formControlName="search"/>
+      </mat-form-field>
+    </div>
+    <div class="edit-field">
+      <div class="edit-label">
+        Typ ćwiczenia:
+      </div>
+      <mat-form-field>
+        <mat-select formControlName="exerciseType">
+          <mat-option value="LEGS">NOGI</mat-option>
+          <mat-option value="CHEST">KLATKA PIERSIOWA</mat-option>
+          <mat-option value="BICEPS">BICEPS</mat-option>
+          <mat-option value="TRICEPS">TRICEPS</mat-option>
+          <mat-option value="SHOULDERS">BARKI</mat-option>
+          <mat-option value="BACK">PLECY</mat-option>
+          <mat-option value="ABS">BRZUCH</mat-option>
+          <mat-option value="">BRAK</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="edit-field">
+      <div class="edit-label">
+        Trudność ćwiczenia:
+      </div>
+      <mat-form-field>
+        <mat-select formControlName="exerciseDifficulty">
+          <mat-option value="EASY">ŁATWE</mat-option>
+          <mat-option value="MEDIUM">ŚREDNIE</mat-option>
+          <mat-option value="HARD">TRUDNE</mat-option>
+          <mat-option value="EXTREME">EKSTREMALNE</mat-option>
+          <mat-option value="">BRAK</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let exercise of exercises; let i = index;">
+      <mat-card (click)="exerciseDetails(exercise)" class="mat-elevation-z4" *ngIf="i + 1 === exercise.length"
+                #theLastList>
+        <div style="align-items: flex-end">
+          <mat-icon>star</mat-icon>
+        </div>
+        <img mat-card-image src='{{exercise.urlImage}}'>
+        <mat-card-content class="card-button-bottom">
+          <h3> {{exercise.name}}</h3>
+          <div class="similar-button"
+               [ngClass]="{
+                          'green' : exercise.exerciseDifficulty == 'EASY',
+                          'orange' : exercise.exerciseDifficulty == 'MEDIUM',
+                          'red' : exercise.exerciseDifficulty == 'HARD',
+                          'extreme' : exercise.exerciseDifficulty == 'EXTREME'
+                       }">
+            <h5> {{exercise.exerciseDifficulty}}</h5>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <mat-card (click)="exerciseDetails(exercise)" class="mat-elevation-z4" *ngIf="i + 1 != exercise.length"
+                #theLastList>
+        <div style="align-items: flex-end">
+          <mat-icon>star</mat-icon>
+        </div>
+        <img mat-card-image src='{{exercise.urlImage}}'>
+        <mat-card-content class="card-button-bottom">
+          <h3> {{exercise.name}}</h3>
+          <div class="similar-button"
+               [ngClass]="{
+                          'green' : exercise.exerciseDifficulty == 'EASY',
+                          'orange' : exercise.exerciseDifficulty == 'MEDIUM',
+                          'red' : exercise.exerciseDifficulty == 'HARD',
+                          'extreme' : exercise.exerciseDifficulty == 'EXTREME'
+                       }">
+            <h5> {{exercise.exerciseDifficulty}}</h5>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+<div class="row pb-5">
+  <div class="col-md-12 p-5">
+    <ngx-spinner
+      bdOpacity=0.9
+      bdColor=""
+      size="default"
+      color="#581f87"
+      type="ball-pulse-sync"
+      [fullScreen]="false"
+    >
+    </ngx-spinner>
+  </div>
+</div>

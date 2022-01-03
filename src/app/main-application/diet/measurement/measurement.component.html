@@ -1,0 +1,190 @@
+<mat-toolbar class="measurement-list-mat-toolbar">Pomiary
+  <button mat-fab class="sticky-button" type="button" (click)="addMeasurement()">
+    <mat-icon class="special">add</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div class="measurement-wrapper">
+  <div class="measurement-header">
+    Aktualny pomiar
+  </div>
+  <div class="measurement-content">
+    <div class="actual-measurement">
+      <div style="text-align: right; margin-bottom: 10px;">{{activeMeasurement.date}}</div>
+      <div class="measurement-card-first">
+        <div class="measurement-text">
+          Wzrost:
+        </div>
+        <div class="measurement-value">
+          {{activeMeasurement.height}} cm
+        </div>
+      </div>
+      <div class="measurement-card-first">
+        <div class="measurement-text">
+          Waga:
+        </div>
+        <div class="measurement-value">
+          {{activeMeasurement.weight}} cm
+        </div>
+      </div>
+      <div class="measurement-card-first">
+        <div class="measurement-text">
+          Kark:
+        </div>
+        <div class="measurement-value">
+          {{activeMeasurement.neck}} cm
+        </div>
+      </div>
+      <div class="measurement-card-first">
+        <div class="measurement-text">
+          Klatka piersiowa:
+        </div>
+        <div class="measurement-value">
+          {{activeMeasurement.chest}} cm
+        </div>
+      </div>
+      <div class="measurement-card-first">
+        <div class="measurement-text">
+          Ramię:
+        </div>
+        <div class="measurement-value">
+          {{activeMeasurement.arm}} cm
+        </div>
+      </div>
+      <div class="measurement-card-first">
+        <div class="measurement-text">
+          Przedramię:
+        </div>
+        <div class="measurement-value">
+          {{activeMeasurement.forehand}} cm
+        </div>
+      </div>
+      <div class="measurement-card-first">
+        <div class="measurement-text">
+          Nadgarstek:
+        </div>
+        <div class="measurement-value">
+          {{activeMeasurement.wrist}} cm
+        </div>
+      </div>
+      <div class="measurement-card-first">
+        <div class="measurement-text">
+          Talia:
+        </div>
+        <div class="measurement-value">
+          {{activeMeasurement.waist}} cm
+        </div>
+      </div>
+      <div class="measurement-card-first">
+        <div class="measurement-text">
+          Udo:
+        </div>
+        <div class="measurement-value">
+          {{activeMeasurement.thigh}} cm
+        </div>
+      </div>
+      <div class="measurement-card-first">
+        <div class="measurement-text">
+          Łydka:
+        </div>
+        <div class="measurement-value">
+          {{activeMeasurement.calf}} cm
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content" style="margin-bottom: 30px">
+  <div class="measurement-header">
+    Pozostałe pomiary
+  </div>
+  <div fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let measure of measurements; let i = index">
+      <div class="mat-measure-own-card">
+        <div style="text-align: right; margin-bottom: 10px;">{{measure.date}}</div>
+        <div class="measurement-card-rest">
+          <div class="measurement-text">
+            Wzrost:
+          </div>
+          <div class="measurement-value">
+            {{measure.height}} cm
+          </div>
+        </div>
+        <div class="measurement-card-rest">
+          <div class="measurement-text">
+            Waga:
+          </div>
+          <div class="measurement-value">
+            {{measure.weight}} kg
+          </div>
+        </div>
+        <div class="measurement-card-rest">
+          <div class="measurement-text">
+            Kark:
+          </div>
+          <div class="measurement-value">
+            {{measure.neck}} cm
+          </div>
+        </div>
+        <div class="measurement-card-rest">
+          <div class="measurement-text">
+            Klatka piersiowa:
+          </div>
+          <div class="measurement-value">
+            {{measure.chest}} cm
+          </div>
+        </div>
+        <div class="measurement-card-rest">
+          <div class="measurement-text">
+            Ramię:
+          </div>
+          <div class="measurement-value">
+            {{measure.arm}} cm
+          </div>
+        </div>
+        <div class="measurement-card-rest">
+          <div class="measurement-text">
+            Przedramię:
+          </div>
+          <div class="measurement-value">
+            {{measure.forehand}} cm
+          </div>
+        </div>
+        <div class="measurement-card-rest">
+          <div class="measurement-text">
+            Nadgarstek:
+          </div>
+          <div class="measurement-value">
+            {{measure.wrist}} cm
+          </div>
+        </div>
+        <div class="measurement-card-rest">
+          <div class="measurement-text">
+            Talia:
+          </div>
+          <div class="measurement-value">
+            {{measure.waist}} cm
+          </div>
+        </div>
+        <div class="measurement-card-rest">
+          <div class="measurement-text">
+            Udo:
+          </div>
+          <div class="measurement-value">
+            {{measure.thigh}} cm
+          </div>
+        </div>
+        <div class="measurement-card-rest">
+          <div class="measurement-text">
+            Łydka:
+          </div>
+          <div class="measurement-value">
+            {{measure.calf}} cm
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

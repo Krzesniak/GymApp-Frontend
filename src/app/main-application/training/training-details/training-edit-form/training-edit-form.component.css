@@ -1,0 +1,97 @@
+.mat-form-field{
+  display: block;
+  flex: 4;
+  margin-right: 7%;
+}
+.mat-dialog-container{
+  background: #081739 !important;
+}
+mat-toolbar.edit-title{
+  justify-content: space-between;
+  background-color: #74a9ff !important;
+  width: auto;
+  margin: 0 15px 0 15px;
+}
+mat-card.edit-form{
+  background-color: #74a9ff !important;
+}
+.mat-form-field-appearance-legacy .mat-form-field-infix{
+  padding: 0 !important;
+}
+.mat-form-field-wrapper{
+  padding: 2px !important;
+}
+
+.mat-input-element{
+  background-color: #081739 !important;
+  border-radius: 25px !important;
+  padding: 10px 15px !important;
+}
+.mat-select{
+  background-color: #081739 !important;
+  border-radius: 25px !important;
+  padding: 10px !important;
+}
+.edit-field{
+  display: flex;
+  align-items: center;
+}
+.edit-label{
+  flex: 1;
+  padding-left: 20px;
+}
+.mat-form-field-underline {
+  display: none;
+}
+.mat-select-panel{
+  background-color: #081739 !important;
+}
+.cdk-global-overlay-wrapper .cdk-overlay-pane{
+  width: 80%;
+}
+.serie{
+  background-color: #eea520;
+  border-radius: 20px;
+  margin: 10px;
+}
+.series-button{
+  flex: 1;
+}
+.series-input{
+  display: flex;
+}
+.series-input-wrapper{
+  flex: 5;
+}
+.series-title{
+  flex: 1;
+  margin-left: 20px;
+}
+.mat-form-field-infix{
+  width: auto !important;
+}
+.mat-form-field-label-wrapper{
+  left: 10px !important;
+  top: -10px !important;
+  color: white;
+  font-size: 14px;
+}
+.mat-form-field-label:focus{
+  color: white;
+}
+.mat-form-field-label{
+  color: white !important;
+}
+.remove-exercise button{
+  background-color: #74a9ff;
+  margin-right: 10px;
+}
+.mat-focus-indicator .mat-tooltip-trigger .choose-exercise-button .mat-raised-button .mat-button-base .mat-red{
+  background-color: #eea520;
+}
+.name-header-exercise .mat-form-field-flex{
+  margin-bottom: 10px;
+}
+
+
+

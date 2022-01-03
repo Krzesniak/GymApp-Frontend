@@ -1,0 +1,20 @@
+mat-toolbar.dashboard-title {
+  justify-content: space-between;
+  background-color: #74a9ff !important;
+  width: auto;
+}
+
+.current-dashboard-date{
+  margin: 15px 0;
+  background: #eea520;
+  border-radius: 10px;
+  padding: 25px;
+  font-size: 25px;
+}
+.dashboard-header {
+  margin: 25px 0;
+  background: #1a2237;
+  border-radius: 10px;
+  padding: 25px;
+  font-size: 25px;
+}

@@ -1,0 +1,266 @@
+<mat-toolbar class="eating-plan-title">Plan jedzeniowy</mat-toolbar>
+
+<div class="exercise-header">
+  <div class="date-subheader">
+    <mat-icon (click)="subtractDay()">chevron_left</mat-icon>
+    {{currentDayText }}
+    <mat-icon (click)="addDay()">chevron_right</mat-icon>
+  </div>
+  <div style="display:flex; align-items: center; padding-bottom: 10px">
+    <div class="record-row">
+      <mat-icon>local_fire_department</mat-icon>
+      Kalorie: {{ingredients.calories}} g
+    </div>
+    <div class="record-row">
+      <mat-icon>egg</mat-icon>
+      Ilość białka: {{ingredients.protein}} g
+    </div>
+    <div class="record-row">
+      <mat-icon>breakfast_dining</mat-icon>
+      Węglowodany: {{ingredients.carbohydrate}} g
+    </div>
+    <div class="record-row">
+      <mat-icon>water_drop</mat-icon>
+      Tłuszcze: {{ingredients.fat}} g
+    </div>
+    <div class="record-row">
+      <mat-icon>grain</mat-icon>
+      Błonnik: {{ingredients.fiber}} g
+    </div>
+
+  </div>
+</div>
+
+<div class="diet-plan" style="margin-bottom: 50px">
+  <mat-card>
+    <mat-card-content class="diet-plan-mat-card">
+      <div class="meal-title">
+        Śniadanie
+      </div>
+      <div *ngIf="!breakfast" class="meal-description">
+        Brak dodanego posiłku
+      </div>
+      <div *ngIf="!breakfast" class="add-meal" (click)="addBreakfast()">
+        <button mat-fab class="sticky-button" type="button">
+          <mat-icon class="special">add</mat-icon>
+        </button>
+        Dodaj posiłek
+      </div>
+      <div *ngIf="breakfast" class="meal-details">
+        <div style="flex: 5">
+          <div *ngIf="breakfast" class="meal-description-found">
+            {{breakfast.name}}
+          </div>
+          <div *ngIf="breakfast" class="meal-calories">
+            <mat-icon>local_fire_department</mat-icon>
+            Kalorie: {{breakfast.mealNutrient.calories}}
+          </div>
+        </div>
+        <div *ngIf="breakfast" class="meal-img">
+          <img src="{{breakfast.urlImage}}">
+        </div>
+        <div *ngIf="breakfast" class="meal-options">
+          <button mat-button [matMenuTriggerFor]="breakfastMenu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #breakfastMenu="matMenu" class="meal-panel">
+            <button mat-menu-item (click)="removeBreakfast()">
+              <mat-icon>delete</mat-icon>
+              Usuń
+            </button>
+            <button mat-menu-item (click)="addBreakfast()">
+              <mat-icon>build</mat-icon>
+              Modyfikuj
+            </button>
+          </mat-menu>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-content class="diet-plan-mat-card">
+      <div class="meal-title">
+        Drugie śniadanie
+      </div>
+      <div *ngIf="!secondBreakfast" class="meal-description">
+        Brak dodanego posiłku
+      </div>
+      <div *ngIf="!secondBreakfast" class="add-meal" (click)="addSecondBreakfast()">
+        <button mat-fab class="sticky-button" type="button">
+          <mat-icon class="special">add</mat-icon>
+        </button>
+        Dodaj posiłek
+      </div>
+      <div *ngIf="secondBreakfast" class="meal-details">
+        <div style="flex: 5">
+          <div *ngIf="secondBreakfast" class="meal-description-found">
+            {{secondBreakfast.name}}
+          </div>
+          <div *ngIf="secondBreakfast" class="meal-calories">
+            <mat-icon>local_fire_department</mat-icon>
+            Kalorie: {{secondBreakfast.mealNutrient.calories}}
+          </div>
+        </div>
+        <div *ngIf="secondBreakfast" class="meal-img">
+          <img src="{{secondBreakfast.urlImage}}">
+        </div>
+        <div *ngIf="secondBreakfast" class="meal-options">
+          <button mat-button [matMenuTriggerFor]="secondBreakfastMenu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #secondBreakfastMenu="matMenu" class="meal-panel">
+            <button mat-menu-item (click)="removeSecondBreakfast()">
+              <mat-icon>delete</mat-icon>
+              Usuń
+            </button>
+            <button mat-menu-item (click)="addSecondBreakfast()">
+              <mat-icon>build</mat-icon>
+              Modyfikuj
+            </button>
+          </mat-menu>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-content class="diet-plan-mat-card">
+      <div class="meal-title">
+        Obiad
+      </div>
+      <div *ngIf="!mainCourse" class="meal-description">
+        Brak dodanego posiłku
+      </div>
+      <div *ngIf="!mainCourse" class="add-meal" (click)="addMainCourse()">
+        <button mat-fab class="sticky-button" type="button">
+          <mat-icon class="special">add</mat-icon>
+        </button>
+        Dodaj posiłek
+      </div>
+      <div *ngIf="mainCourse" class="meal-details">
+        <div style="flex: 5">
+          <div *ngIf="mainCourse" class="meal-description-found">
+            {{mainCourse.name}}
+          </div>
+          <div *ngIf="mainCourse" class="meal-calories">
+            <mat-icon>local_fire_department</mat-icon>
+            Kalorie: {{mainCourse.mealNutrient.calories}}
+          </div>
+        </div>
+        <div *ngIf="mainCourse" class="meal-img">
+          <img src="{{mainCourse.urlImage}}">
+        </div>
+        <div *ngIf="mainCourse" class="meal-options">
+          <button mat-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu" class="meal-panel">
+            <button mat-menu-item (click)="removeMainCourse()">
+              <mat-icon>delete</mat-icon>
+              Usuń
+            </button>
+            <button mat-menu-item (click)="addMainCourse()">
+              <mat-icon>build</mat-icon>
+              Modyfikuj
+            </button>
+          </mat-menu>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-content class="diet-plan-mat-card">
+      <div class="meal-title">
+        Kolacja
+      </div>
+      <div *ngIf="!dinner" class="meal-description">
+        Brak dodanego posiłku
+      </div>
+      <div *ngIf="!dinner" class="add-meal" (click)="addDinner()">
+        <button mat-fab class="sticky-button" type="button">
+          <mat-icon class="special">add</mat-icon>
+        </button>
+        Dodaj posiłek
+      </div>
+      <div *ngIf="dinner" class="meal-details">
+        <div style="flex: 5">
+          <div *ngIf="dinner" class="meal-description-found">
+            {{dinner.name}}
+          </div>
+          <div *ngIf="dinner" class="meal-calories">
+            <mat-icon>local_fire_department</mat-icon>
+            Kalorie: {{dinner.mealNutrient.calories}}
+          </div>
+        </div>
+        <div *ngIf="dinner" class="meal-img">
+          <img src="{{dinner.urlImage}}">
+        </div>
+        <div *ngIf="dinner" class="meal-options">
+          <button mat-button [matMenuTriggerFor]="dinnerMenu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #dinnerMenu="matMenu" class="meal-panel">
+            <button mat-menu-item (click)="removeDinner()">
+              <mat-icon>delete</mat-icon>
+              Usuń
+            </button>
+            <button mat-menu-item (click)="addDinner()">
+              <mat-icon>build</mat-icon>
+              Modyfikuj
+            </button>
+          </mat-menu>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <mat-card>
+    <mat-card-content class="diet-plan-mat-card">
+      <div class="meal-title">
+        Przekąska
+      </div>
+      <div *ngIf="!snacks" class="meal-description">
+        Brak dodanego posiłku
+      </div>
+      <div *ngIf="!snacks" class="add-meal" (click)="addSnack()">
+        <button mat-fab class="sticky-button" type="button">
+          <mat-icon class="special">add</mat-icon>
+        </button>
+        Dodaj posiłek
+      </div>
+      <div *ngIf="snacks" class="meal-details">
+        <div style="flex: 5">
+          <div *ngIf="snacks" class="meal-description-found">
+            {{snacks.name}}
+          </div>
+          <div *ngIf="snacks" class="meal-calories">
+            <mat-icon>local_fire_department</mat-icon>
+            Kalorie: {{snacks.mealNutrient.calories}}
+          </div>
+        </div>
+        <div *ngIf="snacks" class="meal-img">
+          <img src="{{snacks.urlImage}}">
+        </div>
+        <div *ngIf="snacks" class="meal-options">
+          <button mat-button [matMenuTriggerFor]="dinnerMenu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #dinnerMenu="matMenu" class="meal-panel">
+            <button mat-menu-item (click)="removeSnacks()">
+              <mat-icon>delete</mat-icon>
+              Usuń
+            </button>
+            <button mat-menu-item (click)="addSnack()">
+              <mat-icon>build</mat-icon>
+              Modyfikuj
+            </button>
+          </mat-menu>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+
+</div>
+

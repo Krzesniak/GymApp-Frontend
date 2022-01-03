@@ -1,0 +1,27 @@
+.mat-toolbar.mat-primary {
+  background-color: transparent;
+}
+ul li {
+  list-style: none;
+}
+.login-button{
+  background-color: whitesmoke;
+  color: #081739;
+  margin-top: 105px;
+}
+.img-logo-start{
+  margin-top: 100px;
+  margin-left: 60px
+}
+.register-button{
+  background-color: #74a9ff;
+  color: #081739;
+}
+
+@media (max-width: 500px) {
+  .img-logo-start{
+    margin-left: 10px;
+  }
+
+}
+

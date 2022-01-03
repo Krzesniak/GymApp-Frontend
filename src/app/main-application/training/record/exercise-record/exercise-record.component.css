@@ -1,0 +1,52 @@
+table {
+  width: 100%;
+}
+.mat-table thead{
+  background: #1a2237 !important;
+  color: #081739;
+}
+.mat-header-cell{
+  color: white !important;
+  font-size: 16px;
+}
+.mat-paginator{
+  background: #1a2237 !important;
+  color: white !important;
+}
+.mat-table tbody{
+  background: #74a9ff;
+}
+mat-toolbar.title {
+  justify-content: space-between;
+  background-color: #74a9ff !important;
+  width: auto;
+}
+.exercise-header{
+  margin: 15px 0;
+  background: #1a2237;
+  border-radius: 10px;
+}
+.date-subheader{
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+}
+.record-row{
+  flex: 1;
+  padding: 10px 15px;
+  text-align: center;
+  align-items: center;
+}
+.mat-button-toggle{
+  background-color: #eea520 !important;
+}
+.mat-button-toggle-checked{
+  background-color: #1a2237 !important;
+}
+.video-display {
+  margin-top: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -32,7 +32,7 @@ img {
   padding: 4px !important;
 }
 .mat-list-item-content{
-  font-size: 14px !important;
+  font-size: 16px !important;
 }
 
 .similar-button{
@@ -61,3 +61,10 @@ margin: 0;
   width: 100%;
   height: auto;
 }
+@media (max-width: 500px) {
+  .sidebar-main .mat-icon{
+    margin-right: 25px !important;
+  }
+
+}
+

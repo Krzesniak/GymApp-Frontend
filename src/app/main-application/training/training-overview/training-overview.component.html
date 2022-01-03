@@ -1,0 +1,9 @@
+<mat-toolbar class="training-plan">Plan treningowy
+  <button mat-fab class="sticky-button" type="button" (click)="addTraining()" >
+    <mat-icon class="special">add</mat-icon>
+  </button>
+</mat-toolbar>
+<div class="content">
+  <full-calendar #calendar [options]="calendarOptions"></full-calendar>
+</div>
+

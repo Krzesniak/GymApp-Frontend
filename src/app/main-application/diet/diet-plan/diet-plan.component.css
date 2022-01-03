@@ -1,0 +1,105 @@
+.eating-plan-title.mat-toolbar {
+  justify-content: space-between !important;
+  margin: 0 15px 0 15px !important;
+  background-color: #74a9ff !important;
+  width: auto !important;
+}
+.exercise-header{
+  margin: 15px 15px !important;
+  background: #1a2237 !important;
+  border-radius: 10px !important;
+}
+.date-subheader{
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+}
+.diet-plan .mat-card{
+  margin: 16px;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  background-color: #74a9ff;
+  box-sizing: border-box;
+}
+.meal-title{
+  font-size: 18px;
+  color: #1a2237;
+  background-color: #eea520;
+  border-radius: 10px;
+  padding: 10px;
+}
+.diet-plan-mat-card .meal-description{
+  font-size: 26px;
+  color: #1a2237;
+  padding: 10px;
+  margin: 6px;
+}
+.diet-plan-mat-card .meal-description-found{
+  font-size: 26px;
+  color: #1a2237;
+  padding: 10px;
+  margin: 6px;
+  flex: 1;
+}
+.meal-calories{
+  font-size: 18px;
+  color: whitesmoke;
+  margin-left: 20px;
+
+  flex: 1;
+}
+.meal-calories mat-icon{
+  color: #eea520;
+}
+.diet-plan-mat-card .sticky-button{
+  background-color: #eea520 !important;
+  display: inline-flex !important;
+  align-items: center !important;;
+  color: white !important;;
+  justify-content: center !important;;
+  width: 36px !important;;
+  height: 36px !important;;
+  margin-right: 10px !important;;
+}
+.diet-plan-mat-card .sticky-button .mat-icon{
+  margin-left: 8px;
+}
+.diet-plan-mat-card .add-meal{
+  display: inline-block;
+  margin: 8px 15px;
+}
+.diet-plan-mat-card .add-meal:hover{
+  cursor: pointer;
+}
+.diet-plan-mat-card .meal-details{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.diet-plan-mat-card .meal-img{
+  flex: 1;
+  margin-top: 10px;
+  margin-right: 15px;
+}
+.meal-img img{
+  width: 100%;
+}
+.meal-options{
+  flex: 1;
+}
+.record-row{
+  flex: 1;
+  padding: 10px 15px;
+  text-align: center;
+  align-items: center;
+}
+.meal-panel .mat-menu-content{
+  background-color: #1a2237 !important;
+}
+.meal-panel .mat-menu-panel {
+  background-color: #1a2237 !important;
+}
+.mat-card-content.diet-plan-mat-card {
+  display: block;
+}

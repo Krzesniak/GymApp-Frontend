@@ -1,0 +1,353 @@
+<div class="registration-content">
+  <div class="header-form-wrapper">
+    <div class="header-login">
+      <div class="header-logo">
+        <span> <img src="../../../assets/img/home/small_logo.png"></span>
+      </div>
+      <div>
+        <button mat-fab class="sticky-button" type="button" (click)="exit()">
+          <mat-icon class="login-exit">close</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="registration-form-details">
+      <mat-horizontal-stepper labelPosition="bottom" linear>
+        <mat-step label="Dane logowania" [stepControl]="generalInfoForm">
+          <form [formGroup]="generalInfoForm">
+            <div class="edit-field">
+              <div class="edit-label">
+                Nazwa użytkownika
+              </div>
+              <mat-form-field class="full-width-input">
+                <input matInput formControlName="username" required>
+                <mat-error>
+                  Podaj nazwę użytkownika
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="edit-field">
+              <div class="edit-label">
+                Hasło
+              </div>
+              <mat-form-field class="full-width-input">
+                <input type="password" matInput formControlName="password">
+                <mat-error>
+                  Podaj prawidłowe hasło
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="edit-field">
+              <div class="edit-label">
+                Powtórz hasło
+              </div>
+              <mat-form-field class="full-width-input">
+                <input type="password" matInput formControlName="passwordSecondTime" required>
+                <mat-error>
+                  Hasło róźni się od poprzedniego
+                </mat-error>
+              </mat-form-field>
+
+            </div>
+            <div class="edit-field">
+              <div class="edit-label">
+                Email
+              </div>
+              <mat-form-field class="full-width-input">
+                <input matInput formControlName="email" required>
+                <mat-error>
+                  Podaj prawidłowy email
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="registration-button">
+              <button mat-button matStepperNext>Dalej</button>
+            </div>
+          </form>
+
+        </mat-step>
+
+        <mat-step label="Dane osobowe" [stepControl]="measurementForm">
+          <form [formGroup]="personalInfo">
+            <div class="personal-header-form">
+              Dane podstawowe
+            </div>
+            <div class="form-img-wrapper">
+              <div class="basic-info" style="flex: 3;">
+                <div class="measurement-field-wrapper">
+                  <div class="edit-field">
+                    <div class="edit-label">
+                      Imię
+                    </div>
+                    <mat-form-field class="full-width-input">
+                      <input matInput formControlName="name">
+                      <mat-error>
+                        Podaj nazwę użytkownika
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div class="edit-field">
+                    <div class="edit-label">
+                      Nazwisko
+                    </div>
+                    <mat-form-field class="full-width-input">
+                      <input matInput formControlName="surname">
+                      <mat-error>
+                        Podaj prawidłowe hasło
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="measurement-field-wrapper">
+                  <div class="edit-field">
+                    <div class="edit-label">
+                      Data urodzenia
+                    </div>
+                    <mat-form-field class="full-width-input">
+                      <input type="date" matInput formControlName="birthday">
+                      <mat-error>
+                        Podaj nazwę użytkownika
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+              <div style="flex: 1;">
+                <img [src]="url">
+                <input type="file" #selectedFile style="display: none;" (change)="changeAvatar($event)">
+                <button type="button" (click)="getInput()" mat-button style="width: 95%; background-color: #eea520; !important;">Wybierz avatar</button>
+              </div>
+            </div>
+            <div class="personal-header-form">
+              Adres
+            </div>
+            <div class="measurement-field-wrapper">
+              <div class="edit-field">
+                <div class="edit-label">
+                  Kraj
+                </div>
+                <mat-form-field class="full-width-input">
+                  <input matInput formControlName="country">
+                  <mat-error>
+                    Podaj nazwę użytkownika
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="edit-field">
+                <div class="edit-label">
+                  Miasto
+                </div>
+                <mat-form-field class="full-width-input">
+                  <input matInput formControlName="city">
+                  <mat-error>
+                    Podaj prawidłowe hasło
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="measurement-field-wrapper">
+              <div class="edit-field">
+                <div class="edit-label">
+                  Ulica
+                </div>
+                <mat-form-field class="full-width-input">
+                  <input matInput formControlName="street">
+                  <mat-error>
+                    Podaj nazwę użytkownika
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="registration-buttons">
+              <button mat-button matStepperPrevious>Cofnij</button>
+              <button mat-button matStepperNext>Dalej</button>
+            </div>
+          </form>
+
+        </mat-step>
+        <mat-step label="Pomiary" [stepControl]="measurementForm">
+          <div class="form-img-wrapper">
+            <form [formGroup]="measurementForm">
+              <div class="measurement-field-wrapper">
+                <div class="edit-field">
+                  <div class="edit-label">
+                    Wzrost
+                  </div>
+                  <mat-form-field class="full-width-input">
+                    <input matInput formControlName="height">
+                    <mat-error>
+                      Podaj nazwę użytkownika
+                    </mat-error>
+                  </mat-form-field>
+                  <div class="label-measurement">
+                    cm
+                  </div>
+                </div>
+                <div class="edit-field">
+                  <div class="edit-label">
+                    Waga
+                  </div>
+                  <mat-form-field class="full-width-input">
+                    <input matInput formControlName="weight">
+                    <mat-error>
+                      Podaj prawidłowe hasło
+                    </mat-error>
+                  </mat-form-field>
+                  <div class="label-measurement">
+                    kg
+                  </div>
+                </div>
+              </div>
+              <div class="measurement-field-wrapper">
+                <div class="edit-field">
+                  <div class="edit-label">
+                    Kark
+                  </div>
+                  <mat-form-field class="full-width-input">
+                    <input matInput formControlName="neck">
+                    <mat-error>
+                      Podaj nazwę użytkownika
+                    </mat-error>
+                  </mat-form-field>
+                  <div class="label-measurement">
+                    cm
+                  </div>
+                </div>
+                <div class="edit-field">
+                  <div class="edit-label">
+                    Klata piersiowa
+                  </div>
+                  <mat-form-field class="full-width-input">
+                    <input matInput formControlName="chest">
+                    <mat-error>
+                      Podaj prawidłowe hasło
+                    </mat-error>
+                  </mat-form-field>
+                  <div class="label-measurement">
+                    cm
+                  </div>
+                </div>
+              </div>
+              <div class="measurement-field-wrapper">
+                <div class="edit-field">
+                  <div class="edit-label">
+                    Ramię
+                  </div>
+                  <mat-form-field class="full-width-input">
+                    <input matInput formControlName="arm">
+                    <mat-error>
+                      Podaj nazwę użytkownika
+                    </mat-error>
+                  </mat-form-field>
+                  <div class="label-measurement">
+                    cm
+                  </div>
+                </div>
+                <div class="edit-field">
+                  <div class="edit-label">
+                    Przedramię
+                  </div>
+                  <mat-form-field class="full-width-input">
+                    <input matInput formControlName="forehand">
+                    <mat-error>
+                      Podaj prawidłowe hasło
+                    </mat-error>
+                  </mat-form-field>
+                  <div class="label-measurement">
+                    cm
+                  </div>
+                </div>
+              </div>
+              <div class="measurement-field-wrapper">
+                <div class="edit-field">
+                  <div class="edit-label">
+                    Nadgarstek
+                  </div>
+                  <mat-form-field class="full-width-input">
+                    <input matInput formControlName="wrist">
+                    <mat-error>
+                      Podaj nazwę użytkownika
+                    </mat-error>
+                  </mat-form-field>
+                  <div class="label-measurement">
+                    cm
+                  </div>
+                </div>
+                <div class="edit-field">
+                  <div class="edit-label">
+                    Talia
+                  </div>
+                  <mat-form-field class="full-width-input">
+                    <input matInput formControlName="waist">
+                    <mat-error>
+                      Podaj prawidłowe hasło
+                    </mat-error>
+                  </mat-form-field>
+                  <div class="label-measurement">
+                    cm
+                  </div>
+                </div>
+              </div>
+              <div class="measurement-field-wrapper">
+                <div class="edit-field">
+                  <div class="edit-label">
+                    Udo
+                  </div>
+                  <mat-form-field class="full-width-input">
+                    <input matInput formControlName="thigh">
+                    <mat-error>
+                      Podaj nazwę użytkownika
+                    </mat-error>
+                  </mat-form-field>
+                  <div class="label-measurement">
+                    cm
+                  </div>
+                </div>
+                <div class="edit-field">
+                  <div class="edit-label">
+                    Łydka
+                  </div>
+                  <mat-form-field class="full-width-input">
+                    <input matInput formControlName="calf">
+                    <mat-error>
+                      Podaj nazwę użytkownika
+                    </mat-error>
+                  </mat-form-field>
+                  <div class="label-measurement">
+                    cm
+                  </div>
+                </div>
+              </div>
+              <div class="registration-buttons">
+                <button type="submit" mat-button matStepperPrevious>Cofnij</button>
+                <button type="submit" mat-button matStepperNext>Dalej</button>
+              </div>
+            </form>
+            <div class="measurement-image">
+              <img src="../../../assets/img/home/measurement.PNG">
+            </div>
+          </div>
+        </mat-step>
+        <mat-step label="Zgody" [stepControl]="agreementForm">
+          <form [formGroup]="agreementForm">
+            <mat-form-field>
+              <input matInput [hidden]="true">
+              <mat-checkbox formControlName="agree1">Wyrażam zgode na przetwarzanie danych osobowych</mat-checkbox>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput [hidden]="true">
+              <mat-checkbox formControlName="agree2">Przeczytałem i zapoznałem się z regulaminem aplikacji
+              </mat-checkbox>
+            </mat-form-field>
+            <div class="registration-failed" *ngIf="agreementFormInvalid">
+              Obie zgody muszą być zaakceptowane.
+            </div>
+          </form>
+          <div class="registration-buttons">
+            <button mat-button matStepperPrevious>Cofnij</button>
+            <button mat-button (click)="sendForm()">Zajerestruj</button>
+          </div>
+        </mat-step>
+      </mat-horizontal-stepper>
+    </div>
+  </div>
+</div>

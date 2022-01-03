@@ -1,0 +1,96 @@
+<div>
+</div>
+<div class="border">
+  <div class="closing-header">
+    <div>
+      <mat-icon (click)="goBack()">arrow_back_ios</mat-icon>
+    </div>
+    <div>
+      <mat-icon (click)="goBack()">close</mat-icon>
+    </div>
+  </div>
+
+  <div class="main-header">
+    <div class="product-header">
+      <ul class="ul-header">
+        <li>
+          <mat-icon>trending_up</mat-icon>
+          {{exerciseDetails.exerciseDifficulty}}
+        </li>
+      </ul>
+
+      <div class="title">
+        <h2>{{exerciseDetails.name}}</h2>
+      </div>
+      <div class="similar-button red">
+        <h5> {{exerciseDetails.exerciseType}} </h5>
+      </div>
+
+    </div>
+    <div class="product-img">
+      <img src='{{exerciseDetails.urlImage}}'>
+    </div>
+
+
+  </div>
+
+  <!--  <p>{{data.mealID}}</p>-->
+  <div class="details">
+    <div style="padding-top: 10px">
+      <div class="header-exercise-details">
+        <div>
+          <mat-icon>fitness_center</mat-icon>
+        </div>
+        <div style="font-size: 20px">Kroki w ćwiczeniu</div>
+      </div>
+
+      <ul class="recipe-steps">
+        <li *ngFor="let step of exerciseDetails.steps; let i = index;">
+          <div class="row-number">
+            {{i + 1}}.
+          </div>
+          {{step}}
+        </li>
+      </ul>
+    </div>
+    <div style="padding-top: 20px">
+      <div class="header-exercise-details">
+        <div>
+          <mat-icon>info</mat-icon>
+        </div>
+        <div style="font-size: 20px">Wskazówki</div>
+      </div>
+      <ul class="recipe-steps">
+        <li *ngFor="let hint of exerciseDetails.hints; let i = index;">
+          <div class="row-number">
+            {{i + 1}}.
+          </div>
+          {{hint}}
+        </li>
+      </ul>
+    </div>
+    <div style="padding-top: 20px">
+      <div style="display: flex; align-items: center">
+        <div>
+          <mat-icon>videocam</mat-icon>
+        </div>
+        <div style="font-size: 20px">Materiał viedo</div>
+      </div>
+
+      <div class="video-display">
+        <video class="video-main" controls="" width="500px"  name="media">
+        <source *ngIf="exerciseDetails.urlMovie" src="{{exerciseDetails.urlMovie}}" type="video/mp4">
+        </video>
+      </div>
+      <!--    <ul class="recipe-steps">
+            <li *ngFor="let hint of exerciseDetails.hints; let i = index;">
+              <div class="row-number">
+                {{i+1}}.
+              </div>  {{hint}}
+            </li>
+          </ul>-->
+    </div>
+  </div>
+
+</div>
+

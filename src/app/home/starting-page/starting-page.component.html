@@ -1,0 +1,64 @@
+<div class="home-img">
+  <app-home-header></app-home-header>
+  <div *ngIf="infoMessage.length > 1" class="registration-success">
+    {{infoMessage}}
+  </div>
+  <div *ngIf="registrationMessage.length > 1 && isSuccessfullyVerified" class="registration-success">
+    {{registrationMessage}}
+  </div>
+  <div *ngIf="registrationMessage.length > 1 && !isSuccessfullyVerified" class="registration-fail">
+    {{registrationMessage}}
+  </div>
+  <div class="home-card">
+    <div class="home-title">
+      <h1>ZAPISUJ MNIEJ.</h1>
+      <h1>DŹWIGAJ WIĘCEJ...</h1>
+      <p>Krześniakowo jest to najłatwiejsza i najbardziej intuicyjną aplikacja do monitorowania swoich postępów
+        treningowych.
+        Zaufało już nam tysiące osób, więc zaufaj i ty! Dowiedz się szczęgółów
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="home-feature" style="background: #74a9ff">
+  <div class="feature-title" style="padding-right: 20px">
+    <h1>Rozbudowane statystyki</h1>
+    <p>
+      Obserwuj swój postęp za pomocą rozbudowanych wykresów i statystyk. Na podstawie tych rezultatów analizuj i
+      modyfikuj
+      swój trening w celu zlikwidowania najsłabszych punktów.
+    </p>
+  </div>
+  <div class="feature-img">
+    <img src="./assets/img/home/exercise_statistics.PNG">
+  </div>
+</div>
+
+<div class="home-feature" style="background: #081739">
+  <div class="feature-img">
+    <img src="./assets/img/home/records.PNG">
+  </div>
+  <div class="feature-title" style="padding-left: 20px">
+    <h1>Rekordy</h1>
+    <p>
+      Przeglądaj w wygodny sposób swoje rekordy na siłowni i zastanawiaj się, który pobić w następnej kolejności.
+    </p>
+  </div>
+</div>
+
+<div class="home-feature" style="background: #74a9ff">
+  <div class="feature-title" style="padding-right: 20px">
+    <h1>Monitorowanie treningów</h1>
+    <p>
+      Obserwuj swój postęp za pomocą rozbudowanych wykresów i statystyk. Na podstawie tych rezultatów analizuj i
+      modyfikuj
+      swój trening w celu zlikwidowania najsłabszych punktów.
+    </p>
+  </div>
+  <div class="feature-img">
+    <img src="./assets/img/home/training.PNG">
+  </div>
+</div>
+
+

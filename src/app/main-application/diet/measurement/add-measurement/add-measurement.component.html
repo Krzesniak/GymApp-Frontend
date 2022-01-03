@@ -1,0 +1,184 @@
+<mat-card class="add-measurement-form">
+  <div class="closing-header-add-exercise">
+    <mat-toolbar class="edit-title">
+      Dodaj pomiary
+    </mat-toolbar>
+    <div style="margin-right: 20px">
+      <mat-icon (click)="goBack()">clear</mat-icon>
+    </div>
+  </div>
+  <hr>
+  <div class="form-img-wrapper">
+    <form [formGroup]="measurementForm" class="add-form-measure">
+      <div class="measurement-field-wrapper">
+        <div class="edit-field">
+          <div class="edit-label">
+            Wzrost
+          </div>
+          <mat-form-field class="full-width-input">
+            <input matInput formControlName="height">
+            <mat-error>
+              Podaj nazwę użytkownika
+            </mat-error>
+          </mat-form-field>
+          <div class="label-measurement">
+            cm
+          </div>
+        </div>
+        <div class="edit-field">
+          <div class="edit-label">
+            Waga
+          </div>
+          <mat-form-field class="full-width-input">
+            <input matInput formControlName="weight">
+            <mat-error>
+              Podaj prawidłowe hasło
+            </mat-error>
+          </mat-form-field>
+          <div class="label-measurement">
+            kg
+          </div>
+        </div>
+      </div>
+      <div class="measurement-field-wrapper">
+        <div class="edit-field">
+          <div class="edit-label">
+            Kark
+          </div>
+          <mat-form-field class="full-width-input">
+            <input matInput formControlName="neck">
+            <mat-error>
+              Podaj nazwę użytkownika
+            </mat-error>
+          </mat-form-field>
+          <div class="label-measurement">
+            cm
+          </div>
+        </div>
+        <div class="edit-field">
+          <div class="edit-label">
+            Klata piersiowa
+          </div>
+          <mat-form-field class="full-width-input">
+            <input matInput formControlName="chest">
+            <mat-error>
+              Podaj prawidłowe hasło
+            </mat-error>
+          </mat-form-field>
+          <div class="label-measurement">
+            cm
+          </div>
+        </div>
+      </div>
+      <div class="measurement-field-wrapper">
+        <div class="edit-field">
+          <div class="edit-label">
+            Ramię
+          </div>
+          <mat-form-field class="full-width-input">
+            <input matInput formControlName="arm">
+            <mat-error>
+              Podaj nazwę użytkownika
+            </mat-error>
+          </mat-form-field>
+          <div class="label-measurement">
+            cm
+          </div>
+        </div>
+        <div class="edit-field">
+          <div class="edit-label">
+            Przedramię
+          </div>
+          <mat-form-field class="full-width-input">
+            <input matInput formControlName="forehand">
+            <mat-error>
+              Podaj prawidłowe hasło
+            </mat-error>
+          </mat-form-field>
+          <div class="label-measurement">
+            cm
+          </div>
+        </div>
+      </div>
+      <div class="measurement-field-wrapper">
+        <div class="edit-field">
+          <div class="edit-label">
+            Nadgarstek
+          </div>
+          <mat-form-field class="full-width-input">
+            <input matInput formControlName="wrist">
+            <mat-error>
+              Podaj nazwę użytkownika
+            </mat-error>
+          </mat-form-field>
+          <div class="label-measurement">
+            cm
+          </div>
+        </div>
+        <div class="edit-field">
+          <div class="edit-label">
+            Talia
+          </div>
+          <mat-form-field class="full-width-input">
+            <input matInput formControlName="waist">
+            <mat-error>
+              Podaj prawidłowe hasło
+            </mat-error>
+          </mat-form-field>
+          <div class="label-measurement">
+            cm
+          </div>
+        </div>
+      </div>
+      <div class="measurement-field-wrapper">
+        <div class="edit-field">
+          <div class="edit-label">
+            Udo
+          </div>
+          <mat-form-field class="full-width-input">
+            <input matInput formControlName="thigh">
+            <mat-error>
+              Podaj nazwę użytkownika
+            </mat-error>
+          </mat-form-field>
+          <div class="label-measurement">
+            cm
+          </div>
+        </div>
+        <div class="edit-field">
+          <div class="edit-label">
+            Łydka
+          </div>
+          <mat-form-field class="full-width-input">
+            <input matInput formControlName="calf">
+            <mat-error>
+              Podaj nazwę użytkownika
+            </mat-error>
+          </mat-form-field>
+          <div class="label-measurement">
+            cm
+          </div>
+        </div>
+      </div>
+      <div class="measurement-field-wrapper" >
+        <div class="edit-field" style="flex: 1;">
+          <div class="edit-label">
+            Data pomiaru
+          </div>
+          <mat-form-field class="full-width-input" style="flex: 5; margin-right: 100px">
+            <input type="date" matInput formControlName="neck">
+            <mat-error>
+              Podaj nazwę użytkownika
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </form>
+    <div class="measurement-image">
+      <img src="../../../assets/img/home/measurement.PNG">
+    </div>
+  </div>
+  <div class="registration-buttons-add-mesaure">
+    <button type="submit" mat-button >Dodaj pomiar</button>
+  </div>
+</mat-card>

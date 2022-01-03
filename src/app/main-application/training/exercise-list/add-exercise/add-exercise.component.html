@@ -1,0 +1,166 @@
+<mat-card class="add-exercise-form" style="margin-bottom: 30px">
+  <div class="closing-header-add-exercise">
+    <mat-toolbar class="edit-title">
+      Dodaj ćwiczenie
+    </mat-toolbar>
+    <div style="margin-right: 20px">
+      <mat-icon (click)="goBack()">clear</mat-icon>
+    </div>
+  </div>
+  <hr>
+
+  <form class="add-exercise-form" [formGroup]="addExerciseForm" (ngSubmit)="onSubmit()">
+    <div class="exercise-form-image-wrapper">
+      <div class="exercise-form">
+        <div class="edit-field">
+          <div class="edit-label">
+            Nazwa ćwiczenia
+          </div>
+          <mat-form-field>
+            <input class="exercise-input" matInput type="text" formControlName="name" required>
+          </mat-form-field>
+        </div>
+        <div class="edit-field">
+          <div class="edit-label">
+            Trudność treningu
+          </div>
+          <mat-form-field class="add-exercise-form">
+            <mat-select formControlName="exerciseDifficulty">
+              <mat-option value="EASY">ŁATWE</mat-option>
+              <mat-option value="MEDIUM">ŚREDNIE</mat-option>
+              <mat-option value="HARD">TRUDNE-PULL</mat-option>
+              <mat-option value="EXTREME">EKSTREMALNE</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="edit-field">
+          <div class="edit-label">
+            Partia mięsniowa
+          </div>
+          <mat-form-field>
+            <mat-select formControlName="exerciseType">
+              <mat-option value="LEGS">NOGI</mat-option>
+              <mat-option value="CHEST">KLATKA PIERSIOWA</mat-option>
+              <mat-option value="BICEPS">BICEPS</mat-option>
+              <mat-option value="TRICEPS">TRICEPS</mat-option>
+              <mat-option value="SHOULDERS">BARKI</mat-option>
+              <mat-option value="BACK">PLECY</mat-option>
+              <mat-option value="ABS">BRZUCH</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+
+      <div style="flex: 1;">
+        <img [src]="url" style="width: 100%; height: auto">
+        <input type="file" #selectedFile style="display: none;" (change)="changeExerciseImage($event)">
+        <button type="button" (click)="getInput()" mat-button style="width: 95%; background: #eea520">Wybierz zdjęcie ćwiczenia</button>
+      </div>
+    </div>
+
+
+    <hr>
+    <div style="flex: 1; display: flex; align-items: center; flex-direction: column; padding: 15px;">
+      <video class="video-main" controls="" width="500px"  name="media">
+        <source *ngIf="urlMovie" src="{{urlMovie}}" type="video/mp4">
+      </video>
+      <input type="file" #selectedMovie accept="video/*" style="display: none;" (change)="changeExerciseMovie($event)">
+      <button type="button" (click)="getMovie()" mat-button style="width: 95%; background: #eea520">Wybierz filmik przedstawiający poprawnie wykonywane ćwiczenie</button>
+    </div>
+    <hr>
+
+    <button
+      type="button"
+      mat-raised-button color="primary"
+      style="margin-right: 10px"
+      (click)="addExerciseStep()">
+      <mat-icon>add</mat-icon>
+    </button>
+    Dodaj kolejny etap wykonania poprawnego ćwiczenia
+
+    <!--XD-->
+    <div *ngIf="getExerciseSteps().length > 0" formArrayName="steps">
+      <div class="serie" *ngFor="let exercise of getExerciseSteps(); let i = index; ">
+        <ng-container [formGroupName]="i">
+          <div class="edit-field">
+            <div class="edit-label">
+              Etap {{i + 1}}:
+            </div>
+            <mat-form-field class="name-header-exercise">
+              <input formControlName="name" matInput type="text"/>
+            </mat-form-field>
+            <div class="series-button">
+              <button
+                type="button"
+                mat-raised-button color="warn"
+                style="margin-right: 10px"
+                (click)="removeExercise(i)"
+                matTooltip="Dodaj nową serię">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+
+    <button
+      type="button"
+      mat-raised-button color="primary"
+      style="margin-right: 10px"
+      (click)="addExerciseHint()">
+      <mat-icon>add</mat-icon>
+    </button>
+    Dodaj kolejną wskazówkę
+
+
+    <div *ngIf="getExerciseHints().length > 0" formArrayName="hints">
+      <div class="serie" *ngFor="let exerciseHint of getExerciseHints(); let i = index; ">
+        <ng-container [formGroupName]="i">
+          <div class="edit-field">
+            <div class="edit-label">
+              Wskazówka {{i + 1}}:
+            </div>
+            <mat-form-field class="name-header-exercise">
+              <textarea class="exercise-input" matInput type="text" formControlName="name" ></textarea>
+            </mat-form-field>
+            <div class="series-button">
+              <button
+                type="button"
+                mat-raised-button color="warn"
+                style="margin-right: 10px"
+                (click)="removeHint(i)"
+                matTooltip="Dodaj nową serię">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <!--      <mat-form-field>
+            <mat-label>
+              Employee
+            </mat-label>
+            <input formControlName="xd" matInput type="text" [matAutocomplete]="auto"/>
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let item of filteredOptions" [value]="item.name">
+                {{item.name}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>-->
+
+    <div class="sumbit-add-button">
+      <button
+        type="submit"
+        mat-raised-button color="warn"
+        style="margin-right: 10px">
+        Utwórz ćwiczenie
+      </button>
+    </div>
+  </form>
+
+</mat-card>

@@ -1,0 +1,98 @@
+.add-measurement-form .mat-dialog-container{
+  background: #081739 !important;
+}
+.add-measurement-form mat-toolbar{
+  justify-content: space-between;
+  background-color: #74a9ff !important;
+  width: auto;
+  margin: 0 15px 0 15px;
+}
+mat-card.add-measurement-form{
+  background-color: #081739;
+  display: block;
+}
+.add-measurement-form mat-card.edit-form{
+  background-color: #74a9ff !important;
+}
+.closing-header-add-exercise mat-icon {
+  color: wheat;
+  text-shadow: white;
+}
+.closing-header-add-exercise mat-icon:hover {
+  cursor: pointer;
+}
+.closing-header-add-exercise {
+  background-color: #74a9ff;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  align-items: center;
+}
+.form-img-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.measurement-field-wrapper img{
+  border-radius: 50%;
+  max-width: 300px;
+}
+.measurement-field-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+}
+.measurement-field-wrapper .edit-label{
+  flex: 4;
+}
+.measurement-field-wrapper .edit-field{
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.measurement-field-wrapper .edit-label{
+  padding-right: 5px;
+  flex: 2;
+  font-size: 1.2em;
+}
+.measurement-field-wrapper .mat-input-element{
+  background-color: #74a9ff !important;
+  border-radius: 25px !important;
+  padding: 10px 15px !important;
+}
+.measurement-field-wrapper .mat-form-field-appearance-legacy .mat-form-field-underline{
+  display: none !important;
+  height: 0 !important;
+}
+.measurement-field-wrapper .mat-form-field-underline{
+  display: none !important;
+}
+.add-form-measure{
+  flex: 4;
+}
+.measurement-image{
+  flex: 1;
+}
+.measurement-image img{
+  width: auto;
+  height: auto;
+}
+.measurement-field-wrapper .mat-form-field-infix{
+  margin-right: 40px;
+}
+.measurement-field-wrapper .mat-input-element{
+  width: 95%;
+}
+.label-measurement {
+  padding-right: 5px;
+  flex: 2;
+  font-size: 1.2em;
+}
+.registration-buttons-add-mesaure{
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+.registration-buttons-add-mesaure button{
+  background-color: #eea520;
+}
+

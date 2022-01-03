@@ -1,4 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {AuthService} from "../../../services/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -7,8 +9,15 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  avatarURL : String = "";
+  role: string;
   @Output() toggleSideBarForMe: EventEmitter<any> = new EventEmitter();
-  constructor() { }
+  constructor(private authService: AuthService, private router: Router) {
+    this.role = authService.getRole();
+    authService.getImage().subscribe(data =>{
+      this.avatarURL = data.imageURL;
+    });
+  }
 
   ngOnInit(): void {
   }
@@ -16,4 +25,7 @@ export class HeaderComponent implements OnInit {
     this.toggleSideBarForMe.emit();
   }
 
+  logout() {
+    this.authService.logoout();
+  }
 }

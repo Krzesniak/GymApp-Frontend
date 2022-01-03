@@ -1,0 +1,134 @@
+.edit-field{
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.edit-label{
+  flex: 1;
+  margin: 10px 20px;
+}
+.mat-form-field-infix{
+  width: auto !important;
+}
+.mat-form-field-label-wrapper{
+  left: 10px !important;
+  top: -10px !important;
+  color: white;
+  font-size: 14px;
+}
+.mat-form-field-label:focus{
+  color: white;
+}
+.mat-form-field-label{
+  color: white !important;
+}
+.search-header .mat-form-field-underline {
+  display: none !important;
+}
+
+.search-header .mat-input-element{
+  background-color: #74a9ff !important;
+  border-radius: 25px !important;
+  padding: 10px 15px !important;
+}
+.search-header .mat-select{
+  background-color: #74a9ff !important;
+  border-radius: 25px !important;
+  padding: 10px !important;
+}
+.mat-form-field{
+  display: block;
+  flex: 4;
+  margin-right: 10%;
+}
+.edit-field .mat-form-field-appearance-legacy .mat-form-field-underline{
+  display: none !important;
+  height: 0 !important;
+}
+.search-header .mat-form-field-underline{
+  display: none !important;
+}
+.search-header{
+  display: flex;
+  background-color: #081739 !important;
+  align-items: center;
+}
+.search-result{
+  display: flex;
+}
+.search-element-list{
+  padding: 0 10px;
+  flex: 2;
+}
+.search-element-details{
+  flex: 1;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+mat-dialog-container{
+  background-color: #081739 !important;
+}
+.mat-dialog-content{
+  max-height: 100vh;
+
+}
+mat-dialog-content{
+  overflow: auto !important;
+  display: inline !important;
+}
+table {
+  width: 100%;
+}
+.mat-table thead{
+  background: #1a2237 !important;
+  color: #081739;
+}
+.mat-header-cell{
+  color: white !important;
+  font-size: 16px;
+}
+.mat-paginator{
+  background: #1a2237 !important;
+  color: white !important;
+}
+.mat-table tbody{
+  background: #74a9ff;
+}
+.mat-select-panel .mat-optgroup-label, .mat-select-panel .mat-option{
+  background: #74a9ff !important;
+}
+.mat-row:hover {
+  background-color: #eea520;
+  cursor: pointer;
+}
+.highlight {
+  background: #eea520; /* green */
+}
+.exercise-title-filter{
+  background: #1a2237;
+  padding: 16px;
+}
+.video-display {
+  margin-top: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.video-main {
+  border-radius: 20px;
+  border: 5px solid #74a9ff;
+}
+.accept-exercise{
+  background-color: #eea520;
+}
+.back_exercise{
+  background-color: #74a9ff;
+}
+
+.mat-dialog-actions{
+  float: right;
+}

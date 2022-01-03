@@ -1,0 +1,234 @@
+<mat-card class="add-meal-form">
+  <div class="closing-header-add-exercise">
+    <mat-toolbar class="edit-title">
+      Dodaj posiłek
+    </mat-toolbar>
+    <div style="margin-right: 20px">
+      <mat-icon (click)="goBack()">clear</mat-icon>
+    </div>
+  </div>
+  <hr>
+
+  <form class="add-exercise-form" [formGroup]="addMealForm" (ngSubmit)="onSubmit()">
+    <div class="exercise-form-image-wrapper">
+      <div class="exercise-form">
+        <div class="edit-field">
+          <div class="edit-label">
+            Nazwa posiłku
+          </div>
+          <mat-form-field>
+            <input class="exercise-input" matInput type="text" formControlName="name" required>
+          </mat-form-field>
+        </div>
+        <div class="edit-field">
+          <div class="edit-label">
+            Czas przygotowywania
+          </div>
+          <mat-form-field>
+            <input class="exercise-input"  type="time" matInput  formControlName="time" required>
+          </mat-form-field>
+        </div>
+        <div class="edit-field">
+          <div class="edit-label">
+            Trudność przygotowania posiłku
+          </div>
+          <mat-form-field class="add-exercise-form">
+            <mat-select formControlName="mealDifficulty">
+              <mat-option value="EASY">ŁATWE</mat-option>
+              <mat-option value="MEDIUM">ŚREDNIE</mat-option>
+              <mat-option value="HARD">TRUDNE</mat-option>
+              <mat-option value="EXTREME">EKSTREMALNE</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="edit-field">
+          <div class="edit-label">
+            Pora dnia
+          </div>
+          <mat-form-field>
+            <mat-select formControlName="mealType">
+              <mat-option value="BREAKFAST">ŚNIADANIE</mat-option>
+              <mat-option value="SOUP">ZUPY</mat-option>
+              <mat-option value="MAIN_COURSE">OBIAD</mat-option>
+              <mat-option value="DINNER">KOLACJA</mat-option>
+              <mat-option value="SNACKS">PRZYSTAWKI</mat-option>
+              <mat-option value="">BRAK</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+
+      <div style="flex: 1;">
+        <img [src]="url" style="width: 100%; height: auto">
+        <input type="file" #selectedFile style="display: none;" (change)="changeExerciseImage($event)">
+        <button type="button" (click)="getInput()" mat-button style="width: 95%; background: #eea520">Wybierz zdjęcie
+          posiłku
+        </button>
+      </div>
+    </div>
+
+
+    <hr>
+    <div class="edit-field">
+      <div class="edit-label">
+        Ilość kalorii
+      </div>
+      <mat-form-field>
+        <input class="exercise-input" matInput type="text" formControlName="calories" required>
+      </mat-form-field>
+    </div>
+    <div class="edit-field">
+      <div class="edit-label">
+        Ilość białka
+      </div>
+      <mat-form-field>
+        <input class="exercise-input" matInput type="text" formControlName="protein" required>
+      </mat-form-field>
+    </div>
+    <div class="edit-field">
+      <div class="edit-label">
+        Ilość węglowodanów
+      </div>
+      <mat-form-field>
+        <input class="exercise-input" matInput type="text" formControlName="carbohydrate" required>
+      </mat-form-field>
+    </div>
+    <div class="edit-field">
+      <div class="edit-label">
+        Ilość tłuszczów
+      </div>
+      <mat-form-field>
+        <input class="exercise-input" matInput type="text" formControlName="fat" required>
+      </mat-form-field>
+    </div>
+    <div class="edit-field">
+      <div class="edit-label">
+        Ilość błonnika
+      </div>
+      <mat-form-field>
+        <input class="exercise-input" matInput type="text" formControlName="fiber" required>
+      </mat-form-field>
+    </div>
+    <hr>
+
+    <button
+      type="button"
+      mat-raised-button color="primary"
+      style="margin-right: 10px"
+      (click)="addRecipeSteps()">
+      <mat-icon>add</mat-icon>
+    </button>
+    Dodaj kolejny etap przygotowywania posiłku
+
+    <!--XD-->
+    <div *ngIf="getRecipeSteps().length > 0" formArrayName="recipeSteps">
+      <div class="serie" *ngFor="let exercise of getRecipeSteps(); let i = index; ">
+        <ng-container [formGroupName]="i">
+          <div class="edit-field">
+            <div class="edit-label">
+              Etap {{i + 1}}:
+            </div>
+            <mat-form-field class="name-header-exercise">
+              <input formControlName="name" matInput type="text"/>
+            </mat-form-field>
+            <div *ngIf="i > 0" class="series-button">
+              <button
+                type="button"
+                mat-raised-button color="warn"
+                style="margin-right: 10px"
+                (click)="removeRecipeSteps(i)"
+              >
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <button
+      type="button"
+      mat-raised-button color="primary"
+      style="margin-right: 10px"
+      (click)="addMealIngredients()">
+      <mat-icon>add</mat-icon>
+    </button>
+    Dodaj składnik
+    <div *ngIf="getMealIngredients().length > 0" formArrayName="mealIngredients">
+      <div class="serie" *ngFor="let exercise of getMealIngredients(); let i = index; ">
+        <ng-container [formGroupName]="i">
+          <div class="edit-field">
+            <div class="edit-label">
+              Nazwa składniku:
+            </div>
+            <mat-form-field class="name-header-exercise">
+              <input formControlName="name" matInput type="text" readonly/>
+            </mat-form-field>
+            <div  class="remove-exercise">
+              <button
+                (click)="openFilterIngredientDialog(exercise)"
+                type="button"
+                class="choose-exercise-button"
+                mat-raised-button
+                style="margin-right: 10px">
+                Wybierz składnik
+              </button>
+              <button *ngIf="i > 0"
+                (click)="removeMealIngredients(i)"
+                type="button"
+                mat-raised-button
+                style="margin-right: 10px">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </div>
+          <div class="ingredient-wrapper">
+            <div class="edit-field" style="flex: 1">
+            <div class="edit-label">
+              Ilość
+            </div>
+            <mat-form-field class="name-header-exercise">
+              <input formControlName="preciseAmount" matInput type="text"/>
+            </mat-form-field>
+          </div>
+            <div class="edit-field" style="flex: 1">
+              <div class="edit-label">
+                Jednostka
+              </div>
+              <mat-form-field class="name-header-exercise">
+                <mat-select formControlName="measureUnit">
+                  <mat-option value="ml">ml</mat-option>
+                  <mat-option value="kg">kg</mat-option>
+                  <mat-option value="g">g</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+            </div>
+              <div class="edit-field" style="flex: 1">
+                <div class="edit-label">
+                  Przybliżona wartość
+                </div>
+                <mat-form-field class="name-header-exercise">
+                  <input formControlName="amountOverall" matInput type="text"/>
+                </mat-form-field>
+              </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+
+
+    <div class="sumbit-add-button">
+      <button
+        type="submit"
+        mat-raised-button color="warn"
+        style="margin-right: 10px">
+        Utwórz posiłek
+      </button>
+    </div>
+  </form>
+
+</mat-card>

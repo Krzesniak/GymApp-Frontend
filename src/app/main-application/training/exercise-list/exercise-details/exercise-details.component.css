@@ -1,0 +1,129 @@
+.mat-dialog-container {
+  background: #1a2237 !important;
+}
+
+.border {
+  padding: 30px 50px 50px;
+  background-color: #081739;
+}
+
+.closing-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.closing-header mat-icon {
+  color: wheat;
+  text-shadow: white;
+}
+
+.closing-header mat-icon:hover {
+  cursor: pointer;
+}
+
+.main-header {
+  display: flex;
+  padding: 20px;
+  background: #74a9ff !important;
+  border-radius: 15px 15px 0 0;
+  -webkit-box-shadow: 6px 6px 23px 2px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 6px 6px 23px 2px rgba(66, 68, 90, 1);
+  box-shadow: 6px 6px 23px 2px rgba(66, 68, 90, 1);
+}
+
+.details {
+  background-color: #1a2237;
+  padding: 10px 10px 20px 30px;
+  -webkit-box-shadow: 6px 6px 23px 2px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 6px 6px 23px 2px rgba(66, 68, 90, 1);
+  box-shadow: 6px 6px 23px 2px rgba(66, 68, 90, 1);
+}
+
+.product-header {
+  flex: 2;
+  padding: 20px;
+}
+
+.product-img {
+  flex: 1;
+}
+
+img {
+  width: 60%;
+  height: auto;
+}
+
+.title {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.title h2 {
+  font-size: 28px;
+}
+
+.ul-header {
+  padding: 0;
+  margin: 0;
+
+}
+
+.ul-header li {
+  display: inline;
+  padding: 5px;
+}
+
+.flex-2 {
+  flex: 2;
+  padding: 5px 0 5px 0;
+}
+
+.product-header .similar-button {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 25px;
+}
+
+.ingredient-li {
+  display: flex;
+  padding: 5px;
+}
+
+.details li:hover {
+  background-color: #081739;
+  border-radius: 10px;
+}
+
+.recipe-steps {
+  margin: 0;
+  padding: 0;
+}
+
+.recipe-steps li {
+  list-style-type: none;
+  padding: 5px;
+}
+
+.row-number {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.video-display {
+  margin-top: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-main {
+  border-radius: 20px;
+  border: 5px solid #74a9ff;
+}
+.header-exercise-details {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px
+}

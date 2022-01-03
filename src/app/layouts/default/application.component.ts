@@ -28,6 +28,7 @@ export class ApplicationComponent implements OnInit {
 
   sideBarToggler() {
     this.sideBarOpen = !this.sideBarOpen;
+    this.interactionService.sendMessage("update");
   }
 
   closeSideBar() {

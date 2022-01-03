@@ -1,20 +1,72 @@
-<mat-card>
-  <mat-card-content>
-    <form [formGroup]="loginForm" (ngSubmit)="login()">
-      <h2>Log In</h2>
-      <mat-form-field class="full-width-input">
-        <input matInput placeholder="Email" formControlName="username" required>
-        <mat-error>
-          Please provide a valid email address
-        </mat-error>
-      </mat-form-field>
-      <mat-form-field class="full-width-input">
-        <input matInput type="password" placeholder="Password" formControlName="password" required>
-        <mat-error>
-          Please provide a valid password
-        </mat-error>
-      </mat-form-field>
-      <button mat-raised-button color="primary">Login</button>
-    </form>
-  </mat-card-content>
-</mat-card>
+<div class="wrapper"></div>
+<div class="login-registration-content">
+  <div class="header-form-wrapper">
+    <div class="header-login">
+      <div class="header-logo">
+        <span> <img src="../../../assets/img/home/small_logo.png"></span>
+      </div>
+      <div>
+        <button mat-fab class="sticky-button" type="button" (click)="exit()">
+          <mat-icon class="login-exit">close</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="form-details">
+      <div class="login-form">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <div class="login-title">
+            Logowanie
+          </div>
+          <div class="edit-field">
+            <div class="edit-label">
+              Nazwa użytkownika
+            </div>
+          <mat-form-field class="full-width-input">
+            <input matInput  formControlName="username" required>
+            <mat-error>
+              Please provide a valid email address
+            </mat-error>
+          </mat-form-field>
+          </div>
+          <div class="edit-field">
+            <div class="edit-label">
+              Hasło
+            </div>
+          <mat-form-field class="full-width-input">
+            <input matInput type="password"  formControlName="password" required>
+            <mat-error>
+              Please provide a valid password
+            </mat-error>
+          </mat-form-field>
+          </div>
+          <div class="login-failed" *ngIf='this.isError'>
+            Nieudane logowanie. Wprowadź ponownie nazwę użytkownika oraz hasło.
+          </div>
+          <div class="login-form-button">
+          <button mat-raised-button>Zaloguj się</button>
+          </div>
+        </form>
+      </div>
+      <div class="registration-form">
+        <div class="registration-title">
+          Zajerestruj się
+        </div>
+        <div>
+          <ul>
+            <li>Z łatwością zaplanuj sobie najbliższy trening</li>
+            <li>Przeglądaj bazę ćwiczeń i edykuj się, czytając wskazówki lub ogladając nagrane filmy dotyczące
+              prawidłowego wykonywania ćwiczenia
+            </li>
+            <li>
+              Skorzystaj z wykresów, statystyk dotyczące twojego progresu
+            </li>
+            <li>Obserwuj swoje najbliższe rekody na siłowni i pochwal się znajomym</li>
+          </ul>
+        </div>
+        <div class="login-form-button">
+          <button (click)="register()" mat-raised-button>Rejestracja</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

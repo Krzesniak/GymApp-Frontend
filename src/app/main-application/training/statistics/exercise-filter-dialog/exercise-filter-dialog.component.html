@@ -1,0 +1,106 @@
+<mat-dialog-content>
+  <div class="search-header">
+
+    <form [formGroup]="form" style="display: flex; width: 100%">
+      <div class="edit-field">
+        <div class="edit-label">
+          Opis
+        </div>
+        <mat-form-field>
+          <input class="exercise-input" matInput type="text" formControlName="search"/>
+        </mat-form-field>
+      </div>
+      <div class="edit-field">
+        <div class="edit-label">
+          Typ ćwiczenia:
+        </div>
+        <mat-form-field>
+          <mat-select formControlName="exerciseType">
+            <mat-option value="LEGS">NOGI</mat-option>
+            <mat-option value="CHEST">KLATKA PIERSIOWA</mat-option>
+            <mat-option value="BICEPS">BICEPS</mat-option>
+            <mat-option value="TRICEPS">TRICEPS</mat-option>
+            <mat-option value="SHOULDERS">BARKI</mat-option>
+            <mat-option value="BACK">PLECY</mat-option>
+            <mat-option value="ABS">BRZUCH</mat-option>
+            <mat-option value="">BRAK</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="edit-field">
+        <div class="edit-label">
+          Trudność ćwiczenia:
+        </div>
+        <mat-form-field>
+          <mat-select formControlName="exerciseDifficulty">
+            <mat-option value="EASY">ŁATWE</mat-option>
+            <mat-option value="MEDIUM">ŚREDNIE</mat-option>
+            <mat-option value="HARD">TRUDNE</mat-option>
+            <mat-option value="EXTREME">EKSTREMALNE</mat-option>
+            <mat-option value="">BRAK</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </form>
+  </div>
+
+  <div class="search-result">
+    <div class="search-element-list">
+      <div class="mat-elevation-z8" style="margin-bottom: 20px">
+        <table mat-table [dataSource]="dataSource">
+
+          <!-- Position Column -->
+          <ng-container matColumnDef="Numer">
+            <th mat-header-cell *matHeaderCellDef> Numer</th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="Nazwa ćwiczenia">
+            <th mat-header-cell *matHeaderCellDef> Nazwa ćwiczenia</th>
+            <td mat-cell *matCellDef="let element"> {{element.exerciseName}} </td>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="Poziom trudności">
+            <th mat-header-cell *matHeaderCellDef> Poziom trudności</th>
+            <td mat-cell *matCellDef="let element"> {{element.exerciseDifficulty}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Partia mięśniowa">
+            <th mat-header-cell *matHeaderCellDef> Partia mięśniowa</th>
+            <td mat-cell *matCellDef="let element"> {{element.exerciseType}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row (click)="getRecord(row)" *matRowDef="let row; columns: displayedColumns;"
+              [ngClass]="{'highlight': selectedRowIndex == row.exerciseID}"
+          ></tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[10, 15, 25]"
+                       showFirstLastButtons
+                       aria-label="Select page of periodic elements">
+        </mat-paginator>
+      </div>
+
+    </div>
+    <div class="search-element-details">
+      <div class="exercise-title-filter">
+        {{exerciseName}}
+      </div>
+      <div class="video-display">
+        <video class="video-main" controls="" width="500px" name="media">
+          <source *ngIf="exerciseVideo" src="{{exerciseVideo}}" type="video/mp4">
+        </video>
+      </div>
+      <div class="buttons">
+        <mat-dialog-actions>
+          <button class="back_exercise" mat-button mat-dialog-close="false">Cofnij</button>
+          <button class="accept-exercise" mat-button mat-dialog-close="{{exerciseID}}">Wybierz</button>
+        </mat-dialog-actions>
+      </div>
+    </div>
+  </div>
+
+</mat-dialog-content>

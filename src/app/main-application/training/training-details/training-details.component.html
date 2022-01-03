@@ -1,0 +1,86 @@
+<div>
+</div>
+<div class="border">
+  <div class="closing-header">
+    <div>
+      <mat-icon (click)="goBack()">arrow_back_ios</mat-icon>
+    </div>
+    <div>
+      <mat-icon (click)="edit(trainingDetails.id)">edit</mat-icon>
+      <mat-icon>delete</mat-icon>
+      <mat-icon (click)="goBack()">close</mat-icon>
+    </div>
+  </div>
+
+  <div class="main-header">
+    <div class="product-header">
+      <ul class="ul-header">
+        <li>
+          <mat-icon>event</mat-icon>
+          {{trainingDetails.date}}
+        </li>
+        <li>
+          <mat-icon>schedule</mat-icon>
+          {{trainingDetails.duration}}
+        </li>
+      </ul>
+
+      <div class="title">
+        <h2 style="color: #081739">{{trainingDetails.name}}</h2>
+      </div>
+
+      <div style="margin-bottom: 6px; font-size: 16px; color: #eea520">
+        <mat-icon>description</mat-icon> OPIS
+      </div>
+      <h4>{{trainingDetails.description}}</h4>
+      <div style="margin-bottom: 6px; font-size: 16px; color: #c42e38">
+        <mat-icon>warning</mat-icon> UWAGI
+      </div>
+      <div>
+         <h4>{{trainingDetails.note}}</h4>
+      </div>
+
+    </div>
+    <div class="product-img">
+      <img src='assets/img/training-types/{{trainingDetails.urlImage}}.jpg'>
+    </div>
+
+
+  </div>
+
+  <!--  <p>{{data.mealID}}</p>-->
+  <div class="details">
+    <div class="exercise-title">
+      Wykonywane ćwiczenia:
+    </div>
+    <mat-card *ngFor="let trainingDetail of trainingDetails.exerciseResults">
+
+        <mat-toolbar>{{trainingDetail.name }}</mat-toolbar>
+
+
+      <div style="display: flex">
+        <div class="table-container">
+          <table >
+            <tr>
+              <th>Nr Serii</th>
+              <th>Ilość powtórzeń</th>
+              <th>Ciężar</th>
+            </tr>
+            <tr *ngFor="let exercise of trainingDetail.results">
+              <td>{{exercise.seriesNumber}}</td>
+              <td>{{exercise.repetitions}}</td>
+              <td>{{exercise.weight}}</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="image-container">
+          <img src='{{trainingDetail.urlImage}}'>
+        </div>
+      </div>
+
+    </mat-card>
+  </div>
+</div>
+
+

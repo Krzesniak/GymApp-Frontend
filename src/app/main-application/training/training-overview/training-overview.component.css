@@ -1,0 +1,90 @@
+mat-toolbar.training-plan {
+  justify-content: space-between;
+  margin: 0 15px 0 15px;
+  background-color: #74a9ff;
+  width: auto;
+}
+.content {
+  padding: 16px;
+  z-index: 2;
+}
+full-calendar{
+  min-height: 80vh;
+  height: 80vh;
+}
+.fc .fc-toolbar.fc-header-toolbar{
+  background: #eea520 !important;
+  padding: 1.5em;
+  margin: 0 !important;
+}
+.fc-theme-standard td{
+  background: #74a9ff ;
+}
+.fc .fc-daygrid-day.fc-day-today{
+  background: #eea520 !important;
+}
+.fc-col-header {
+  background: #1a2237 !important;
+}
+.fc .fc-daygrid-event-harness{
+  background: #1a2237 !important;
+  border-radius: 5px;
+}
+.fc-direction-ltr .fc-daygrid-event.fc-event-end{
+  background: #1a2237 !important;
+  border: none !important;
+}
+.sticky-button{
+  background-color: #eea520 !important;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+.mat-icon.special{
+  color: white !important;
+}
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+.mat-fab .mat-button-wrapper{
+  padding: 16px !important;
+}
+.fc .fc-toolbar-title{
+  color: whitesmoke;
+}
+@media (max-width: 500px) {
+  .content{
+    padding: 0;
+  }
+  mat-toolbar.training-plan{
+    margin: 0;
+  }
+  mat-toolbar.training-plan .mat-fab{
+    height: 30px;
+    width: 30px;
+    line-height: 0;
+    margin-left: 5px;
+  }
+  mat-toolbar.training-plan .mat-fab .mat-button-wrapper{
+    padding: 0!important;
+
+  }
+  .fc-toolbar-chunk{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .fc-today-button.fc-button.fc-button-primary{
+    margin-bottom: 5px;
+  }
+
+}
+@media (max-width: 500px) {
+  .training-plan mat-icon{
+    margin: 0;
+  }
+
+}

@@ -1,0 +1,192 @@
+<mat-card class="edit-form">
+  <div class="closing-header">
+    <mat-toolbar class="edit-title">
+      Dodaj trening
+    </mat-toolbar>
+    <div style="margin-right: 20px">
+      <mat-icon (click)="goBack()">clear</mat-icon>
+    </div>
+  </div>
+  <hr>
+
+  <form [formGroup]="addTrainingForm" (ngSubmit)="onSubmit()">
+    <div class="edit-field">
+      <div class="edit-label">
+        Nazwa
+      </div>
+      <mat-form-field>
+        <input class="exercise-input" matInput type="text" formControlName="name" required>
+      </mat-form-field>
+    </div>
+    <div class="edit-field">
+      <div class="edit-label">
+        Typ Treningu
+      </div>
+      <mat-form-field>
+        <mat-select formControlName="trainingType">
+          <mat-option value="SPLIT">SPLIT</mat-option>
+          <mat-option value="FBW">FBW</mat-option>
+          <mat-option value="PUSH_PULL">PUSH-PULL</mat-option>
+          <mat-option value="UP_DOWN">UP_DOWN</mat-option>
+          <mat-option value="OTHER">OTHER</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="edit-field">
+      <div class="edit-label">
+        Opis
+      </div>
+      <mat-form-field>
+        <textarea class="exercise-input" matInput type="text" formControlName="description" required></textarea>
+      </mat-form-field>
+    </div>
+    <div class="edit-field">
+      <div class="edit-label">
+        Uwagi
+      </div>
+      <mat-form-field>
+        <textarea class="exercise-input" matInput type="text" formControlName="note" required></textarea>
+      </mat-form-field>
+    </div>
+    <div class="edit-field">
+      <div class="edit-label">
+        Data treningu
+      </div>
+      <mat-form-field>
+        <input  matInput type="date" formControlName="date">
+
+      </mat-form-field>
+    </div>
+    <div class="edit-field">
+      <div class="edit-label">
+        Godzina
+      </div>
+      <mat-form-field>
+        <input matInput type="time" formControlName="hour">
+      </mat-form-field>
+    </div>
+    <div class="edit-field">
+      <div class="edit-label">
+        Czas trwania
+      </div>
+      <mat-form-field>
+        <input matInput type="time" formControlName="duration">
+      </mat-form-field>
+    </div>
+    <hr>
+
+    <button
+      type="button"
+      mat-raised-button color="primary"
+      style="margin-right: 10px"
+      (click)="addExercise()"
+      matTooltip="Dodaj nowe ćwiczenie">
+      <mat-icon>add</mat-icon>
+
+    </button>
+    Dodaj nowe ćwiczenie
+
+    <!--XD-->
+    <div *ngIf="getExercises().length > 0" formArrayName="exerciseResults">
+      <div class="serie" *ngFor="let exercise of getExercises(); let i = index; ">
+        <ng-container [formGroupName]="i">
+          <div class="edit-field">
+            <div class="edit-label">
+              Nazwa ćwiczenia:
+            </div>
+            <mat-form-field class="name-header-exercise">
+              <input formControlName="name" matInput type="text" readonly/>
+            </mat-form-field>
+            <div class="remove-exercise">
+              <button
+                (click)="openFilterExerciseDialog(exercise)"
+                type="button"
+                class="choose-exercise-button"
+                mat-raised-button
+                style="margin-right: 10px"
+                matTooltip="Dodaj nową serię">
+                Wybierz ćwiczenie
+              </button>
+              <button
+                type="button"
+                mat-raised-button
+                style="margin-right: 10px"
+                matTooltip="Dodaj nową serię">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </div>
+          <!--SERIES-->
+          <div *ngIf="getSeries(exercise).length > 0" formArrayName="series">
+            <div *ngFor="let serie of getSeries(exercise); let j = index;">
+              <ng-container [formGroupName]="j">
+                <div class="edit-field">
+                  <div class="series-title">
+                    Seria: {{j + 1}}
+                  </div>
+                  <div class="series-input-wrapper">
+
+                    <div class="series-input">
+                      <mat-form-field>
+                        <mat-label>Ciężar</mat-label>
+                        <input matInput type="number" formControlName="weight">
+                      </mat-form-field>
+                      <mat-form-field>
+                        <mat-label>Czas</mat-label>
+                        <input matInput type="number" formControlName="duration" required>
+                      </mat-form-field>
+                      <mat-form-field>
+                        <mat-label>Ilość powtórzeń</mat-label>
+                        <input matInput type="number" formControlName="repetitions" required>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="series-button">
+                    <button
+                      type="button"
+                      mat-raised-button color="warn"
+                      style="margin-right: 10px"
+                      (click)="addSeries(exercise)"
+                      matTooltip="Dodaj nową serię">
+                      <mat-icon>add</mat-icon>
+                    </button>
+                    <button
+                      type="button"
+                      mat-raised-button color="warn"
+                      style="margin-right: 10px"
+                      (click)="removeSeries(exercise, j)"
+                      matTooltip="Dodaj nową serię">
+                      <mat-icon>delete</mat-icon>
+                    </button>
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <!--      <mat-form-field>
+            <mat-label>
+              Employee
+            </mat-label>
+            <input formControlName="xd" matInput type="text" [matAutocomplete]="auto"/>
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let item of filteredOptions" [value]="item.name">
+                {{item.name}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>-->
+
+    <div class="sumbit-add-button">
+      <button
+        type="submit"
+        mat-raised-button color="warn"
+        style="margin-right: 10px">
+        Utwórz trening
+      </button>
+    </div>
+  </form>
+
+</mat-card>

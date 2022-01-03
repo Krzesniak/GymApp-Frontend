@@ -1,0 +1,60 @@
+.unaccepted-exercise{
+  display: flex;
+  padding: 15px;
+  margin: 10px;
+  align-items: center;
+  background-color: #74a9ff;
+  border-radius: 10px;
+}
+.unaccepted-exercise-image{
+  cursor: pointer;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.unaccepted-exercise-image img{
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 20%;
+}
+.unaccepted-exercise-text-wrapper{
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.unaccepted-exercise-label{
+  flex:1;
+  padding: 10px;
+  margin-left: 20px;
+  font-size: 1.2rem;
+}
+.unaccepted-exercise-value{
+  flex:1;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+.unaccepted-exercise-buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+.approve-exercise-button.mat-fab{
+  background-color: #6fce65;
+  margin: 10px;
+}
+.decline-exercise-button.mat-fab{
+  background-color: #be162b;
+  margin: 10px;
+}
+.approve-exercise-button .mat-icon{
+  margin: 0;
+  color: white;
+}
+.decline-exercise-button .mat-icon{
+  margin: 0;
+  color: white;
+}

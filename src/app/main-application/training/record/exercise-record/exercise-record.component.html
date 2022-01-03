@@ -1,0 +1,79 @@
+<mat-toolbar class="title">
+  Rekordy ćwiczeń
+</mat-toolbar>
+
+<div class="exercise-header">
+  <div class="date-subheader">
+    <mat-icon (click)="subtractMonth()">chevron_left</mat-icon>
+    {{currentDate}}
+    <mat-icon (click)="addMonth()">chevron_right</mat-icon>
+  </div>
+  <div style="display:flex; align-items: center">
+    <div class="record-row">
+      <mat-icon>fitness_center</mat-icon>Najwięcej wykonanych ćwiczeń w ramach jednego treningu: {{exerciseHeader.exercisesCounter.value}}
+    </div>
+    <div class="record-row">
+     <mat-icon>schedule</mat-icon> Najdłuższy czas treningu: {{exerciseHeader.longestTrainingTime.value}}
+    </div>
+    <div class="record-row">
+     <mat-icon>repeat_one</mat-icon> Najwięcej wykonych serii w ramach jednego treningu: {{exerciseHeader.seriesCounter.value}}
+    </div>
+    <div class="record-row">
+     <mat-icon>accessibility_new</mat-icon> Najczęściej wykonywane ćwiczenie: {{exerciseHeader.exerciseName.value}}
+    </div>
+  </div>
+</div>
+
+<div style="float: right">
+  <mat-button-toggle-group [value]="selectedVal" (change)="sort()" [(ngModel)]="maxByProperty" aria-label="Font Style">
+    <mat-button-toggle value="weight">Ciężar</mat-button-toggle>
+    <mat-button-toggle value="repetitions">Ilość powtórzeń</mat-button-toggle>
+    <mat-button-toggle value="duration">Czas trwania</mat-button-toggle>
+  </mat-button-toggle-group>
+
+</div>
+<div class="mat-elevation-z8" style="margin-bottom: 20px">
+  <table mat-table [dataSource]="dataSource">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="Numer">
+      <th mat-header-cell *matHeaderCellDef> Numer</th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="Nazwa ćwiczenia">
+      <th mat-header-cell *matHeaderCellDef> Nazwa ćwiczenia</th>
+      <td mat-cell *matCellDef="let element"> {{element.exerciseName}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Ciężar">
+      <th mat-header-cell *matHeaderCellDef> Ciężar</th>
+      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Ilość powtórzeń">
+      <th mat-header-cell *matHeaderCellDef> Ilość powtórzeń</th>
+      <td mat-cell *matCellDef="let element"> {{element.repetitions}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Czas trwania">
+      <th mat-header-cell *matHeaderCellDef> Czas trwania</th>
+      <td mat-cell *matCellDef="let element"> {{element.duration}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Nazwa Treningu">
+      <th mat-header-cell *matHeaderCellDef> Nazwa treningu</th>
+      <td mat-cell (click)="goToTraining(element.trainingID)" *matCellDef="let element"> {{element.trainingName}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[10, 15, 25]"
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
+</div>

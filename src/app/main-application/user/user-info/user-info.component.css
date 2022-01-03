@@ -1,0 +1,142 @@
+.registration-content{
+  background-color: #74a9ff;
+  min-height: 100vh;
+}
+.sticky-button{
+  background-color: #eea520 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.mat-icon.login-exit{
+  color: white !important;
+}
+.header-form-wrapper{
+  padding-top: 30px;
+  display: flex ;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.header-login{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 60px;
+  flex: 1;
+}
+.form-details{
+  border-radius: 15px;
+  flex: 3;
+  display: flex;
+  margin: 60px;
+  padding: 40px;
+  align-items: stretch;
+  background-color: #1a2237;
+  flex-wrap: wrap;
+}
+.registration-form-details{
+  border-radius: 15px;
+  flex: 3;
+  margin: 60px;
+  padding: 40px;
+  align-items: stretch;
+  background-color: #1a2237;
+  flex-wrap: wrap;
+  display: flex;
+}
+.user-info mat-horizontal-stepper{
+  width: 100%;
+  background-color: #1a2237;
+}
+.user-info .mat-step-icon-selected{
+  background-color: #eea520;
+}
+.user-info .mat-input-element{
+  background-color: #74a9ff !important;
+  border-radius: 25px !important;
+  padding: 10px 15px !important;
+}
+.user-info .mat-form-field{
+  display: block;
+  flex: 10;
+}
+.user-info{
+  color: white;
+}
+.user-info .edit-label{
+  padding-right: 5px;
+  flex: 2;
+  font-size: 1.2em;
+}
+.label-measurement{
+  padding-right: 5px;
+  flex: 2;
+  font-size: 1.2em;
+}
+
+.user-info .mat-form-field-appearance-legacy .mat-form-field-underline{
+  display: none !important;
+  height: 0 !important;
+}
+.user-info .mat-form-field-underline{
+  display: none !important;
+}
+.user-info .edit-field{
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.user-info mat-form-field.full-width-input{
+  flex: 12;
+}
+.user-info .mat-input-element{
+  width: 95%;
+}
+.login-form-button{
+  flex: 1;
+  align-items: flex-end;
+  justify-content: flex-end;
+  display: flex;
+}
+.measurement-field-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+}
+.measurement-field-wrapper .edit-label{
+  flex: 4;
+}
+.form-img-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.measurement-image{
+  flex: 1;
+}
+.registration-form-details form {
+  flex: 3;
+  margin-right: 10px;
+}
+.measurement-field-wrapper .mat-form-field-infix{
+  margin-right: 40px;
+}
+.personal-header-form{
+  background-color: #eea520;
+  padding: 15px;
+  margin: 10px 0;
+  font-size: 2em;
+  width: 100%;
+}
+.registration-failed{
+  display: flex;
+  text-align: center;
+  margin: 10px 0;
+  border: 2px solid black;
+  padding: 15px;
+  background-color: #FCB0B0;
+}
+.mat-checkbox-background{
+  background-color: #eea520 !important;
+}

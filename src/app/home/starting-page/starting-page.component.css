@@ -1,0 +1,103 @@
+.registration-success{
+  padding: 10px;
+  background-color: #15c701;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  align-items: center;
+}
+.registration-fail{
+  padding: 10px;
+  font-size: 20px;
+  background-color: #ff2c45;
+  color: white;
+  text-align: center;
+  align-items: center;
+}
+.home-card{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.home-img{
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../../../assets/img/home/card.jpg") ;
+  height: 100vh;
+  background-size: cover;
+  position: relative;
+  background-position: center center;
+}
+.home-title h1{
+  color: whitesmoke;
+  font-size: 5em;
+  padding: 15px;
+  text-align: center;
+}
+.home-title br{
+  font-size: 50px;
+}
+.home-title p {
+  width: 50%;
+  transform: translate(50%, 20%);
+  font-size: 1.4em;
+  line-height: 1.3em;
+  text-align: center;
+  color: #74a9ff;
+}
+.home-feature{
+  background-color: whitesmoke;
+  display: flex;
+  padding: 10%;
+  flex-wrap: wrap;
+}
+.feature-title{
+  color: white;
+  flex: 1;
+}
+.feature-title h1{
+  background-color: #eea520;
+  padding: 10px;
+  border-radius: 20px;
+  text-align: justify;
+  font-size: 3.5em;
+  line-height: 1.3em;
+  margin-bottom: 1em;
+}
+.feature-title p{
+  text-align: left;
+  font-size: 2em;
+  line-height: 1.1em;
+  color: white;
+  margin-left: 5px;
+}
+.feature-img{
+  flex: 1;
+  padding-left: 20px
+}
+.feature-img img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  min-width: 300px;
+}
+@media (max-width: 500px) {
+  .home-title h1{
+    font-size: 35px;
+  }
+  .home-feature{
+    padding: 5%;
+  }
+  .home-feature h1{
+    font-size: 25px;
+  }
+  .home-feature p{
+    font-size: 20px;
+  }
+  .home-feature p{
+    margin-bottom: 30px;
+  }
+  .feature-img{
+    padding-left: 5px;
+  }
+}

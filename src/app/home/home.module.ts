@@ -10,22 +10,29 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatButtonModule} from "@angular/material/button";
+import { StartingPageComponent } from './starting-page/starting-page.component';
+import {MatCardModule} from "@angular/material/card";
 
 
 @NgModule({
-  declarations: [
-    HomeComponent,
-    HomeHeaderComponent
-  ],
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    SharedModule,
-    MatMenuModule,
-    MatIconModule,
-    MatToolbarModule,
-    FlexLayoutModule,
-    MatButtonModule
-  ]
+    declarations: [
+        HomeComponent,
+        HomeHeaderComponent,
+        StartingPageComponent
+    ],
+    exports: [
+        HomeHeaderComponent
+    ],
+    imports: [
+        CommonModule,
+        HomeRoutingModule,
+        SharedModule,
+        MatMenuModule,
+        MatIconModule,
+        MatToolbarModule,
+        FlexLayoutModule,
+        MatButtonModule,
+        MatCardModule
+    ]
 })
 export class HomeModule { }

@@ -1,0 +1,44 @@
+mat-toolbar {
+  justify-content: space-between;
+  margin: 0 15px 0 15px;
+  background-color: #74a9ff;
+  width: auto;
+}
+.exercise-header{
+  margin: 15px 15px;
+  background: #1a2237;
+  border-radius: 10px;
+}
+.date-subheader{
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+}
+.record-row{
+  flex: 1;
+  padding: 10px 15px;
+  text-align: center;
+  align-items: center;
+}
+.divided-chart{
+  border: 5px solid #74a9ff;
+  margin: 10px;
+  flex: 1;
+  min-width: 200px;
+}
+.chart-label{
+  text-align: right;
+  background-color: #eea520;
+}
+.chart-label mat-icon{
+  margin: 0 !important;
+}
+.mat-icon:hover{
+  cursor: pointer;
+}
+.chart-label button{
+  background-color: #74a9ff;
+  color: white;
+  margin: 5px;
+}
+

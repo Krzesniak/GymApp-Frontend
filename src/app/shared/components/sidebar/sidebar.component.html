@@ -1,26 +1,26 @@
 <mat-nav-list>
 
-  <a mat-list-item routerLinkActive="list-item-active" routerLink="/">
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/app">
     <mat-icon>home</mat-icon>
     Dashboard
   </a>
 
-  <mat-expansion-panel expanded="true">
+  <mat-expansion-panel  class="sidebar-main" expanded="true">
     <mat-expansion-panel-header>
       <mat-panel-title>
         Trening
       </mat-panel-title>
     </mat-expansion-panel-header>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/posts">
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/app/trainings">
       <mat-icon>fitness_center</mat-icon>
       Plan treningowy
     </a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/articles">
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/app/training/statistics">
       <mat-icon>equalizer</mat-icon>
       Statystyki
     </a>
     <a>
-      <a mat-list-item routerLinkActive="list-item-active" routerLink="/articles">
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/app/records/exercises">
         <mat-icon>emoji_events</mat-icon>
         Rekordy
       </a>
@@ -29,9 +29,10 @@
       <mat-icon>menu_book</mat-icon>
       Baza ćwiczeń
     </a>
+
   </mat-expansion-panel>
 
-  <mat-expansion-panel expanded="true">
+  <mat-expansion-panel class="sidebar-main" expanded="true">
     <mat-expansion-panel-header>
       <mat-panel-title>
         Dieta
@@ -40,11 +41,14 @@
 
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/posts">
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/app/diet-plan">
       <mat-icon>restaurant</mat-icon>Plan jedzeniowy
     </a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/articles">
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/app/diet/statistics">
       <mat-icon>equalizer</mat-icon> Statystyki
+    </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/app/measurement">
+      <mat-icon>analytics</mat-icon> Pomiary
     </a>
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/app/meals">
       <mat-icon>menu_book</mat-icon>  Baza przepisów

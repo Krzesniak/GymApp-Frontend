@@ -1,0 +1,149 @@
+.exercise-list-mat-toolbar {
+  justify-content: space-between;
+  margin: 0 15px 0 15px;
+  background-color: #74a9ff ;
+  width: auto !important;
+}
+.exercise-list-mat-toolbar .sticky-button{
+  background-color: #eea520 !important;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+.mat-fab .mat-button-wrapper{
+  padding: 16px !important;
+}
+.mat-icon.special{
+  color: white !important;
+}
+.content {
+  padding: 16px;
+}
+.mat-icon:hover{
+  cursor: pointer;
+}
+.content > mat-card {
+  margin-bottom: 16px;
+}
+.content .mat-icon{
+  float: right;
+}
+.mat-card-header{
+  flex-direction: row-reverse;
+}
+.mat-card-image{
+  width: calc(110%);
+  padding: 15px;
+  margin-top: 0px;
+  margin-bottom: 0;
+  border-radius: 10%;
+  height: 90%;
+  box-sizing: border-box;
+}
+.mat-card{
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  background-color: #1a2237;
+  box-sizing: border-box;
+}
+.filter-header{
+  display: flex;
+  background-color: #1a2237 !important;
+  align-items: center;
+  margin: 16px;
+}
+.filter-header .edit-field{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 200px;
+}
+.filter-header .edit-label{
+  flex: 1;
+  margin: 10px 20px;
+}
+.filter-header .input-full-width .mat-form-field-infix{
+  width: auto !important;
+}
+.filter-header .mat-form-field-infix{
+  width: auto !important;
+}
+.mat-form-field-label-wrapper{
+  left: 10px !important;
+  top: -10px !important;
+  color: white;
+  font-size: 14px;
+}
+.mat-form-field-label:focus{
+  color: white;
+}
+.mat-form-field-label{
+  color: white !important;
+}
+.filter-header .mat-form-field-underline {
+  display: none !important;
+}
+
+.filter-header .mat-input-element{
+  background-color: #74a9ff !important;
+  border-radius: 25px !important;
+  padding: 10px 15px !important;
+}
+.filter-header .mat-select{
+  background-color: #74a9ff !important;
+  border-radius: 25px !important;
+  padding: 10px !important;
+}
+.filter-header .mat-select-panel .mat-optgroup-label, .mat-select-panel .mat-option{
+  background: #74a9ff !important;
+}
+.filter-header .mat-form-field{
+  display: block;
+  flex: 4;
+  margin-right: 10%;
+}
+.edit-field .mat-form-field-appearance-legacy .mat-form-field-underline{
+  display: none !important;
+  height: 0 !important;
+}
+.card-button-bottom{
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 125px;
+}
+.exercise-accept{
+  padding: 10px;
+  background-color: #15c701;
+  color: white;
+  text-align: center;
+  align-items: center;
+  border: 2px solid whitesmoke;
+  margin: 0 15px 0 15px;
+}
+.form-exercise-list{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+@media (max-width: 500px) {
+  .exercise-list-mat-toolbar {
+    margin-top: 5px;
+  }
+  .exercise-list-mat-toolbar .mat-fab{
+    height: 30px;
+    width: 30px;
+    line-height: 0;
+  }
+  .exercise-list-mat-toolbar mat-icon{
+    margin: 0 0 0 2px!important;
+  }
+  .exercise-list-mat-toolbar .mat-fab .mat-button-wrapper{
+    padding: 0!important;
+  }
+  mat-drawer-content{
+    padding: 0px !important;
+  }
+}

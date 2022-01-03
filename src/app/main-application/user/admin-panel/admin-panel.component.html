@@ -1,0 +1,60 @@
+<mat-tab-group>
+  <mat-tab label="Niezaakceptowane ćwiczenia">
+    <div *ngFor="let exercise of exercises" class="unaccepted-exercise">
+      <div class="unaccepted-exercise-image" (click)="exerciseDetails(exercise)">
+        <img src="{{exercise.urlImage}}">
+      </div>
+      <div class="unaccepted-exercise-text-wrapper" (click)="exerciseDetails(exercise)">
+        <div style="display: flex">
+          <div class="unaccepted-exercise-label">Nazwa ćwiczenia:</div>
+          <div class="unaccepted-exercise-value">{{exercise.name}}</div>
+        </div>
+        <div style="display: flex">
+          <div class="unaccepted-exercise-label">Dodane przez:</div>
+          <div class="unaccepted-exercise-value">{{exercise.createdBy}}</div>
+        </div>
+        <div style="display: flex">
+          <div class="unaccepted-exercise-label">Data dodania:</div>
+          <div class="unaccepted-exercise-value">{{exercise.createdDate}}</div>
+        </div>
+      </div>
+      <div class="unaccepted-exercise-buttons">
+        <button mat-fab class="approve-exercise-button" type="button" (click)="approveExercise(exercise)">
+          <mat-icon class="special">done</mat-icon>
+        </button>
+        <button mat-fab class="decline-exercise-button" type="button" (click)="deleteExercise(exercise)">
+          <mat-icon class="special">close</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="Niezaakceptowane posiłki">
+    <div *ngFor="let meal of meals" class="unaccepted-exercise">
+      <div class="unaccepted-exercise-image" (click)="mealDetails(meal)">
+        <img src="{{meal.urlImage}}">
+      </div>
+      <div class="unaccepted-exercise-text-wrapper" (click)="mealDetails(meal)">
+        <div style="display: flex">
+          <div class="unaccepted-exercise-label">Nazwa ćwiczenia:</div>
+          <div class="unaccepted-exercise-value">{{meal.name}}</div>
+        </div>
+        <div style="display: flex">
+          <div class="unaccepted-exercise-label">Dodane przez:</div>
+          <div class="unaccepted-exercise-value">{{meal.createdBy}}</div>
+        </div>
+        <div style="display: flex">
+          <div class="unaccepted-exercise-label">Data dodania:</div>
+          <div class="unaccepted-exercise-value">{{meal.createdDate}}</div>
+        </div>
+      </div>
+      <div class="unaccepted-exercise-buttons">
+        <button mat-fab class="approve-exercise-button" type="button" (click)="approveMeal(meal)">
+          <mat-icon class="special">done</mat-icon>
+        </button>
+        <button mat-fab class="decline-exercise-button" type="button" (click)="deleteMeal(meal)">
+          <mat-icon class="special">close</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-tab>
+</mat-tab-group>

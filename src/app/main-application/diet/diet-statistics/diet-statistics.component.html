@@ -1,0 +1,49 @@
+<mat-toolbar>Statystyki</mat-toolbar>
+<div class="divided-chart" style="margin-bottom: 40px">
+  <div class="chart-label-nutrient">
+    <div class="label-time">
+      <mat-icon (click)="addMonth()">chevron_left</mat-icon>
+      {{currentDate}}
+      <mat-icon (click)="subtractMonth()">chevron_right</mat-icon>
+    </div>
+    <div class="nutrient-form">
+      <mat-button-toggle-group  (change)="pickNutrient()" [(ngModel)]="nutrient" aria-label="Font Style">
+        <mat-button-toggle value="calories">Kalorie</mat-button-toggle>
+        <mat-button-toggle value="fat">Tłuszcze</mat-button-toggle>
+        <mat-button-toggle value="carbohydrates">Węglowodany</mat-button-toggle>
+        <mat-button-toggle value="fiber">Błonnik</mat-button-toggle>
+        <mat-button-toggle value="proteins">Białko</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+  </div>
+  <highcharts-chart
+    [Highcharts]="nutrientChart"
+    [options]="nutrientOptions"
+    [(update)]="updateNutrient"
+    style="width: 100%; height: 400px; display: block;">
+  </highcharts-chart>
+</div>
+
+<div class="divided-chart" style="margin-bottom: 40px">
+  <div class="chart-label">
+      <mat-button-toggle-group [value]="selectedVal" (change)="sort()" [(ngModel)]="maxByProperty" aria-label="Font Style">
+        <mat-button-toggle value="weight">Waga</mat-button-toggle>
+        <mat-button-toggle value="height">Wzrost</mat-button-toggle>
+        <mat-button-toggle value="neck">Kark</mat-button-toggle>
+        <mat-button-toggle value="arm">Ramię</mat-button-toggle>
+        <mat-button-toggle value="forehand">Przedramię</mat-button-toggle>
+        <mat-button-toggle value="wrist">Nadgarstek</mat-button-toggle>
+        <mat-button-toggle value="chest">Klatka piersiowa</mat-button-toggle>
+        <mat-button-toggle value="waist">Talia</mat-button-toggle>
+        <mat-button-toggle value="thigh">Udo</mat-button-toggle>
+        <mat-button-toggle value="calf">Łydka</mat-button-toggle>
+      </mat-button-toggle-group>
+  </div>
+  <highcharts-chart
+    [Highcharts]="highcharts"
+    [options]="chartOptions"
+    [(update)]="updateFromLineChart"
+    style="width: 100%; height: 400px; display: block;">
+  </highcharts-chart>
+</div>
+

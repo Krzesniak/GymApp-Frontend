@@ -1,0 +1,72 @@
+<form class="user-info"[formGroup]="personalInfo">
+  <div class="personal-header-form">
+    Dane podstawowe
+  </div>
+  <div class="form-img-wrapper">
+    <div class="basic-info" style="flex: 3;">
+      <div class="measurement-field-wrapper">
+        <div class="edit-field">
+          <div class="edit-label">
+            Imię
+          </div>
+          <mat-form-field class="full-width-input">
+            <input matInput formControlName="name" readonly>
+          </mat-form-field>
+        </div>
+        <div class="edit-field">
+          <div class="edit-label">
+            Nazwisko
+          </div>
+          <mat-form-field class="full-width-input">
+            <input matInput formControlName="surname">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="measurement-field-wrapper">
+        <div class="edit-field">
+          <div class="edit-label">
+            Data urodzenia
+          </div>
+          <mat-form-field class="full-width-input">
+            <input type="date" readonly matInput formControlName="birthday">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div style="flex: 1; display: flex; align-items: center; justify-content: center">
+      <img src="{{url}}">
+    </div>
+  </div>
+  <div class="personal-header-form">
+    Adres
+  </div>
+  <div class="measurement-field-wrapper">
+    <div class="edit-field">
+      <div class="edit-label">
+        Kraj
+      </div>
+      <mat-form-field class="full-width-input">
+        <input matInput readonly formControlName="country">
+      </mat-form-field>
+    </div>
+    <div class="edit-field">
+      <div class="edit-label">
+        Miasto
+      </div>
+      <mat-form-field class="full-width-input">
+        <input matInput readonly formControlName="city">
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="measurement-field-wrapper">
+    <div class="edit-field">
+      <div class="edit-label">
+        Ulica
+      </div>
+      <mat-form-field class="full-width-input">
+        <input matInput readonly formControlName="street">
+      </mat-form-field>
+    </div>
+  </div>
+</form>
+

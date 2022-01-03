@@ -4,24 +4,25 @@
       <mat-icon>menu</mat-icon>
     </button>
 
-    <span> APP LOGO </span>
+    <span> <img style="margin-top: 5px" src="../../../../assets/img/home/logo1.png"></span>
 
     <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
       <ul fxLayout="row" fxLayoutGap="20px">
         <li>
           <button mat-button [matMenuTriggerFor]="menu">
-            <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Soufiane FADIL">
+            <img style="width: 40px; height: 40px" src="{{avatarURL}}"
+                 alt="Avatar">
           </button>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item>
+            <button mat-menu-item routerLink="/app/user">
               <mat-icon>exit_to_app</mat-icon>
               Moje dane
             </button>
-            <button mat-menu-item>
+            <button routerLink="/app/admin-panel" *ngIf="role === 'ROLE_ADMIN'" mat-menu-item>
               <mat-icon>exit_to_app</mat-icon>
-              Aktualizuj plan
+              Panel administratora
             </button>
-            <button mat-menu-item>
+            <button mat-menu-item (click)="logout()">
               <mat-icon>exit_to_app</mat-icon>
               Wyloguj się
             </button>
